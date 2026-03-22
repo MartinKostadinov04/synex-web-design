@@ -119,3 +119,47 @@
     @apply bg-background text-foreground font-sans;
   }
 }
+
+/* ─── Animation Utilities ─── */
+@layer utilities {
+  /* Stagger delay helpers: apply to children for sequential reveals */
+  .stagger-1 { animation-delay: 0.05s; }
+  .stagger-2 { animation-delay: 0.1s; }
+  .stagger-3 { animation-delay: 0.15s; }
+  .stagger-4 { animation-delay: 0.2s; }
+  .stagger-5 { animation-delay: 0.25s; }
+  .stagger-6 { animation-delay: 0.3s; }
+
+  /* Underline-slide link animation */
+  .story-link > * {
+    @apply relative inline-block;
+  }
+  .story-link > *::after {
+    content: "";
+    @apply absolute w-full h-0.5 bottom-0 left-0 bg-primary origin-bottom-right transition-transform duration-300 scale-x-0;
+  }
+  .story-link > *:hover::after {
+    @apply scale-x-100 origin-bottom-left;
+  }
+
+  /* Hover scale */
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+
+  /* Hover lift (subtle shadow + translate) */
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-md;
+  }
+
+  /* Shimmer background for skeleton/loading states */
+  .bg-shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--muted)) 25%,
+      hsl(var(--muted-foreground) / 0.08) 50%,
+      hsl(var(--muted)) 75%
+    );
+    background-size: 200% 100%;
+  }
+}

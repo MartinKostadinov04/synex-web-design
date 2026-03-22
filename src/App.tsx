@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound.tsx";
 import DesignSystem from "./pages/DesignSystem.tsx";
 import ExampleHeaders from "./pages/ExampleHeaders.tsx";
 import BackgroundIdeation from "./pages/BackgroundIdeation.tsx";
+import AnimationsDemo from "./pages/AnimationsDemo.tsx";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/design-system" element={<DesignSystem />} />
           <Route path="/example-headers" element={<ExampleHeaders />} />
           <Route path="/backgrounds" element={<BackgroundIdeation />} />
+          <Route path="/animations" element={<AnimationsDemo />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
