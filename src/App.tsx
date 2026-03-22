@@ -23,6 +23,7 @@ const App = () => (
           <Route path="/batteryreg" element={<BatteryReg />} />
           <Route path="/design-system" element={<DesignSystem />} />
           <Route path="/example-headers" element={<ExampleHeaders />} />
+          <Route path="/backgrounds" element={<BackgroundIdeation />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
