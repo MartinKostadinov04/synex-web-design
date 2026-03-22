@@ -8,6 +8,12 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
+import SectionShowcase from "@/components/design-system/SectionShowcase";
+import HeroSection from "@/components/landing/HeroSection";
+import FeaturesSection from "@/components/landing/FeaturesSection";
+import BentoSection from "@/components/landing/BentoSection";
+import OpportunitiesSection from "@/components/landing/OpportunitiesSection";
+import BlogSection from "@/components/landing/BlogSection";
 
 /* ─── Helpers ─── */
 const ColorSwatch = ({ name, hex, hsl, usage }: { name: string; hex: string; hsl: string; usage: string }) => (
