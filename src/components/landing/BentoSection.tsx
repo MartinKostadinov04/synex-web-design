@@ -13,10 +13,10 @@ const BentoSection = () => (
         <div className="relative lg:col-span-3">
           <div className="absolute inset-0 rounded-lg bg-card max-lg:rounded-t-[2rem] lg:rounded-tl-[2rem]" />
           <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)] lg:rounded-tl-[calc(2rem+1px)]">
-            <div className="h-80 bg-gradient-to-br from-primary/10 via-accent to-secondary flex items-center justify-center">
+            <div className="h-48 sm:h-80 bg-gradient-to-br from-primary/10 via-accent to-secondary flex items-center justify-center">
               <Database className="h-16 w-16 text-primary/40" />
             </div>
-            <div className="p-10 pt-4">
+            <div className="p-6 sm:p-10 pt-4">
               <h3 className="text-sm/4 font-semibold text-primary">Data Management</h3>
               <p className="mt-2 text-lg font-medium tracking-tight text-foreground">
                 All your compliance data, one place
@@ -33,10 +33,10 @@ const BentoSection = () => (
         <div className="relative lg:col-span-3">
           <div className="absolute inset-0 rounded-lg bg-card lg:rounded-tr-[2rem]" />
           <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-tr-[calc(2rem+1px)]">
-            <div className="h-80 bg-gradient-to-bl from-primary/10 via-accent to-secondary flex items-center justify-center">
+            <div className="h-48 sm:h-80 bg-gradient-to-bl from-primary/10 via-accent to-secondary flex items-center justify-center">
               <BarChart3 className="h-16 w-16 text-primary/40" />
             </div>
-            <div className="p-10 pt-4">
+            <div className="p-6 sm:p-10 pt-4">
               <h3 className="text-sm/4 font-semibold text-primary">Compliance Tracking</h3>
               <p className="mt-2 text-lg font-medium tracking-tight text-foreground">
                 Real-time regulation readiness
@@ -53,10 +53,10 @@ const BentoSection = () => (
         <div className="relative lg:col-span-2">
           <div className="absolute inset-0 rounded-lg bg-card lg:rounded-bl-[2rem]" />
           <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-bl-[calc(2rem+1px)]">
-            <div className="h-80 bg-gradient-to-tr from-secondary via-accent to-primary/10 flex items-center justify-center">
+            <div className="h-48 sm:h-80 bg-gradient-to-tr from-secondary via-accent to-primary/10 flex items-center justify-center">
               <Link2 className="h-16 w-16 text-primary/40" />
             </div>
-            <div className="p-10 pt-4">
+            <div className="p-6 sm:p-10 pt-4">
               <h3 className="text-sm/4 font-semibold text-primary">Supply Chain</h3>
               <p className="mt-2 text-lg font-medium tracking-tight text-foreground">
                 End-to-end visibility
@@ -73,10 +73,10 @@ const BentoSection = () => (
         <div className="relative lg:col-span-2">
           <div className="absolute inset-0 rounded-lg bg-card" />
           <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)]">
-            <div className="h-80 bg-gradient-to-b from-secondary to-accent flex items-center justify-center">
+            <div className="h-48 sm:h-80 bg-gradient-to-b from-secondary to-accent flex items-center justify-center">
               <Plug className="h-16 w-16 text-primary/40" />
             </div>
-            <div className="p-10 pt-4">
+            <div className="p-6 sm:p-10 pt-4">
               <h3 className="text-sm/4 font-semibold text-primary">Integrations</h3>
               <p className="mt-2 text-lg font-medium tracking-tight text-foreground">
                 Fits into your workflow
@@ -93,10 +93,10 @@ const BentoSection = () => (
         <div className="relative lg:col-span-2">
           <div className="absolute inset-0 rounded-lg bg-card max-lg:rounded-b-[2rem] lg:rounded-br-[2rem]" />
           <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-br-[calc(2rem+1px)]">
-            <div className="h-80 bg-gradient-to-tl from-primary/10 via-accent to-secondary flex items-center justify-center">
+            <div className="h-48 sm:h-80 bg-gradient-to-tl from-primary/10 via-accent to-secondary flex items-center justify-center">
               <FileText className="h-16 w-16 text-primary/40" />
             </div>
-            <div className="p-10 pt-4">
+            <div className="p-6 sm:p-10 pt-4">
               <h3 className="text-sm/4 font-semibold text-primary">Reporting</h3>
               <p className="mt-2 text-lg font-medium tracking-tight text-foreground">
                 Audit-ready in one click

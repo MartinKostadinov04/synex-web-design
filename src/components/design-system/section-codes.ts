@@ -1954,6 +1954,68 @@ const HeroGridBackground = ({ id = "hero-grid-bg" }: { id?: string }) => (
 export default HeroGridBackground;
 `;
 
+export const footerCode = `import { Link } from "react-router-dom";
+import logo from "@/assets/logo.svg";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+
+const navigation = {
+  services: [
+    { name: "ESPR Consulting", href: "/consulting/espr" },
+    { name: "Battery Regulation", href: "/batteryreg" },
+    { name: "Digital Product Passports", href: "/platform/dpp" },
+    { name: "Battery Pass", href: "/platform/battery-pass" },
+  ],
+  company: [
+    { name: "About", href: "/about" },
+    { name: "Partnerships", href: "/partnerships" },
+    { name: "Resources", href: "/resources" },
+    { name: "Contact", href: "/contact" },
+  ],
+  legal: [
+    { name: "Privacy Policy", href: "/privacy" },
+    { name: "Terms of Service", href: "/terms" },
+    { name: "Imprint", href: "/imprint" },
+  ],
+  social: [
+    { name: "LinkedIn", href: "#", icon: /* SVG */ },
+    { name: "X", href: "#", icon: /* SVG */ },
+    { name: "GitHub", href: "#", icon: /* SVG */ },
+  ],
+};
+
+const Footer = () => (
+  <footer className="border-t border-border bg-secondary/30">
+    <div className="container pb-8 pt-16 sm:pt-20 lg:pt-24">
+      {/* Top: Logo + Nav columns */}
+      <div className="xl:grid xl:grid-cols-3 xl:gap-8">
+        <div className="space-y-4">
+          <img src={logo} alt="Synex" className="h-7" />
+          <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
+            Simplifying EU Battery Regulation compliance for manufacturers and importers.
+          </p>
+        </div>
+
+        {/* Nav columns — hidden on mobile */}
+        <div className="hidden md:grid mt-16 grid-cols-2 gap-8 xl:col-span-2 xl:mt-0 lg:grid-cols-3">
+          {/* Services, Company, Legal columns */}
+        </div>
+      </div>
+
+      {/* Newsletter */}
+      <div className="mt-16 border-t border-border pt-8 sm:mt-20 lg:mt-24 lg:flex lg:items-center lg:justify-between">
+        {/* Subscribe heading + form */}
+      </div>
+
+      {/* Bottom: social + copyright */}
+      <div className="mt-8 border-t border-border pt-8 md:flex md:items-center md:justify-between">
+        {/* Social icons + © year */}
+      </div>
+    </div>
+  </footer>
+);
+
+export default Footer;`;
 export const pageHeadersCode = `import { ReactNode } from "react";
 
 interface PageHeaderProps {

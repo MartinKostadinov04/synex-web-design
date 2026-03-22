@@ -53,6 +53,7 @@ import {
   batteryPassportOverviewCode,
   heroGridBgCode,
   pageHeadersCode,
+  footerCode,
 } from "@/components/design-system/section-codes";
 
 /* ─── Helpers ─── */
@@ -151,7 +152,7 @@ const DesignSystem = () => {
         <Separator />
 
         {/* ─── 2. TYPOGRAPHY ─── */}
-        <Section id="typography" title="Typography" description="Roboto is the brand typeface. Weights: 400 (Regular), 500 (Medium), 700 (Bold). All sizes use rem units.">
+        <Section id="typography" title="Typography" description="Roboto is the brand typeface. Weights: 400 (Regular), 500 (Medium), 700 (Bold). All sizes use rem units. Responsive rules scale headings down on mobile.">
           <div className="space-y-8">
             {/* Scale table */}
             <div className="overflow-x-auto">
@@ -159,41 +160,43 @@ const DesignSystem = () => {
                 <thead>
                   <tr className="border-b border-border">
                     <th className="text-left py-3 pr-6 font-medium text-muted-foreground">Element</th>
-                    <th className="text-left py-3 pr-6 font-medium text-muted-foreground">Size</th>
+                    <th className="text-left py-3 pr-6 font-medium text-muted-foreground">Desktop</th>
+                    <th className="text-left py-3 pr-6 font-medium text-muted-foreground">Mobile</th>
                     <th className="text-left py-3 pr-6 font-medium text-muted-foreground">Weight</th>
-                    <th className="text-left py-3 pr-6 font-medium text-muted-foreground">Line Height</th>
                     <th className="text-left py-3 pr-6 font-medium text-muted-foreground">Color</th>
                     <th className="text-left py-3 font-medium text-muted-foreground">Tailwind Classes</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border">
-                  <tr><td className="py-3 pr-6">H1</td><td className="py-3 pr-6 font-mono text-xs">2.5rem (40px)</td><td className="py-3 pr-6">700</td><td className="py-3 pr-6">1.2</td><td className="py-3 pr-6">foreground</td><td className="py-3 font-mono text-xs">text-4xl font-bold leading-tight</td></tr>
-                  <tr><td className="py-3 pr-6">H2</td><td className="py-3 pr-6 font-mono text-xs">2rem (32px)</td><td className="py-3 pr-6">700</td><td className="py-3 pr-6">1.25</td><td className="py-3 pr-6">foreground</td><td className="py-3 font-mono text-xs">text-3xl font-bold</td></tr>
-                  <tr><td className="py-3 pr-6">H3</td><td className="py-3 pr-6 font-mono text-xs">1.5rem (24px)</td><td className="py-3 pr-6">700</td><td className="py-3 pr-6">1.3</td><td className="py-3 pr-6">foreground</td><td className="py-3 font-mono text-xs">text-2xl font-bold</td></tr>
-                  <tr><td className="py-3 pr-6">H4</td><td className="py-3 pr-6 font-mono text-xs">1.25rem (20px)</td><td className="py-3 pr-6">500</td><td className="py-3 pr-6">1.4</td><td className="py-3 pr-6">foreground</td><td className="py-3 font-mono text-xs">text-xl font-medium</td></tr>
-                  <tr><td className="py-3 pr-6">H5</td><td className="py-3 pr-6 font-mono text-xs">1.125rem (18px)</td><td className="py-3 pr-6">500</td><td className="py-3 pr-6">1.4</td><td className="py-3 pr-6">foreground</td><td className="py-3 font-mono text-xs">text-lg font-medium</td></tr>
-                  <tr><td className="py-3 pr-6">H6</td><td className="py-3 pr-6 font-mono text-xs">1rem (16px)</td><td className="py-3 pr-6">500</td><td className="py-3 pr-6">1.5</td><td className="py-3 pr-6">foreground</td><td className="py-3 font-mono text-xs">text-base font-medium</td></tr>
-                  <tr><td className="py-3 pr-6">Subtitle</td><td className="py-3 pr-6 font-mono text-xs">1.125rem (18px)</td><td className="py-3 pr-6">400</td><td className="py-3 pr-6">1.6</td><td className="py-3 pr-6">muted-foreground</td><td className="py-3 font-mono text-xs">text-lg text-muted-foreground</td></tr>
-                  <tr><td className="py-3 pr-6">Body</td><td className="py-3 pr-6 font-mono text-xs">1rem (16px)</td><td className="py-3 pr-6">400</td><td className="py-3 pr-6">1.6</td><td className="py-3 pr-6">foreground</td><td className="py-3 font-mono text-xs">text-base</td></tr>
-                  <tr><td className="py-3 pr-6">Body Small</td><td className="py-3 pr-6 font-mono text-xs">0.875rem (14px)</td><td className="py-3 pr-6">400</td><td className="py-3 pr-6">1.5</td><td className="py-3 pr-6">muted-foreground</td><td className="py-3 font-mono text-xs">text-sm text-muted-foreground</td></tr>
-                  <tr><td className="py-3 pr-6">Caption</td><td className="py-3 pr-6 font-mono text-xs">0.75rem (12px)</td><td className="py-3 pr-6">400</td><td className="py-3 pr-6">1.5</td><td className="py-3 pr-6">muted-foreground</td><td className="py-3 font-mono text-xs">text-xs text-muted-foreground</td></tr>
+                  <tr><td className="py-3 pr-6">H1</td><td className="py-3 pr-6 font-mono text-xs">2.5rem (40px)</td><td className="py-3 pr-6 font-mono text-xs">1.875rem (30px)</td><td className="py-3 pr-6">700</td><td className="py-3 pr-6">foreground</td><td className="py-3 font-mono text-xs">text-3xl sm:text-4xl font-bold</td></tr>
+                  <tr><td className="py-3 pr-6">H2</td><td className="py-3 pr-6 font-mono text-xs">2rem (32px)</td><td className="py-3 pr-6 font-mono text-xs">1.5rem (24px)</td><td className="py-3 pr-6">700</td><td className="py-3 pr-6">foreground</td><td className="py-3 font-mono text-xs">text-2xl sm:text-3xl font-bold</td></tr>
+                  <tr><td className="py-3 pr-6">H3</td><td className="py-3 pr-6 font-mono text-xs">1.5rem (24px)</td><td className="py-3 pr-6 font-mono text-xs">1.25rem (20px)</td><td className="py-3 pr-6">700</td><td className="py-3 pr-6">foreground</td><td className="py-3 font-mono text-xs">text-xl sm:text-2xl font-bold</td></tr>
+                  <tr><td className="py-3 pr-6">H4</td><td className="py-3 pr-6 font-mono text-xs">1.25rem (20px)</td><td className="py-3 pr-6 font-mono text-xs">1.125rem (18px)</td><td className="py-3 pr-6">500</td><td className="py-3 pr-6">foreground</td><td className="py-3 font-mono text-xs">text-lg sm:text-xl font-medium</td></tr>
+                  <tr><td className="py-3 pr-6">H5</td><td className="py-3 pr-6 font-mono text-xs">1.125rem (18px)</td><td className="py-3 pr-6 font-mono text-xs">1rem (16px)</td><td className="py-3 pr-6">500</td><td className="py-3 pr-6">foreground</td><td className="py-3 font-mono text-xs">text-base sm:text-lg font-medium</td></tr>
+                  <tr><td className="py-3 pr-6">H6</td><td className="py-3 pr-6 font-mono text-xs">1rem (16px)</td><td className="py-3 pr-6 font-mono text-xs">1rem (16px)</td><td className="py-3 pr-6">500</td><td className="py-3 pr-6">foreground</td><td className="py-3 font-mono text-xs">text-base font-medium</td></tr>
+                  <tr><td className="py-3 pr-6">Subtitle</td><td className="py-3 pr-6 font-mono text-xs">1.125rem (18px)</td><td className="py-3 pr-6 font-mono text-xs">1rem (16px)</td><td className="py-3 pr-6">400</td><td className="py-3 pr-6">muted-foreground</td><td className="py-3 font-mono text-xs">text-base sm:text-lg text-muted-foreground</td></tr>
+                  <tr><td className="py-3 pr-6">Body</td><td className="py-3 pr-6 font-mono text-xs">1rem (16px)</td><td className="py-3 pr-6 font-mono text-xs">1rem (16px)</td><td className="py-3 pr-6">400</td><td className="py-3 pr-6">foreground</td><td className="py-3 font-mono text-xs">text-base</td></tr>
+                  <tr><td className="py-3 pr-6">Body Small</td><td className="py-3 pr-6 font-mono text-xs">0.875rem (14px)</td><td className="py-3 pr-6 font-mono text-xs">0.875rem (14px)</td><td className="py-3 pr-6">400</td><td className="py-3 pr-6">muted-foreground</td><td className="py-3 font-mono text-xs">text-sm text-muted-foreground</td></tr>
+                  <tr><td className="py-3 pr-6">Caption</td><td className="py-3 pr-6 font-mono text-xs">0.75rem (12px)</td><td className="py-3 pr-6 font-mono text-xs">0.75rem (12px)</td><td className="py-3 pr-6">400</td><td className="py-3 pr-6">muted-foreground</td><td className="py-3 font-mono text-xs">text-xs text-muted-foreground</td></tr>
+                  <tr><td className="py-3 pr-6">Section Label</td><td className="py-3 pr-6 font-mono text-xs">1rem (16px)</td><td className="py-3 pr-6 font-mono text-xs">0.875rem (14px)</td><td className="py-3 pr-6">600</td><td className="py-3 pr-6">primary</td><td className="py-3 font-mono text-xs">text-sm sm:text-base font-semibold text-primary</td></tr>
                 </tbody>
               </table>
             </div>
 
             {/* Live preview */}
-            <div className="space-y-6 p-8 rounded-lg border border-border bg-card">
+            <div className="space-y-6 p-4 sm:p-8 rounded-lg border border-border bg-card">
               <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-4">Live Preview</h3>
-              <h1 className="text-4xl font-bold leading-tight text-foreground">Heading 1 — The quick brown fox</h1>
-              <h2 className="text-3xl font-bold text-foreground">Heading 2 — Jumps over the lazy dog</h2>
-              <h3 className="text-2xl font-bold text-foreground">Heading 3 — Pack my box with five dozen</h3>
-              <h4 className="text-xl font-medium text-foreground">Heading 4 — Liquor jugs</h4>
-              <h5 className="text-lg font-medium text-foreground">Heading 5 — How vexingly quick</h5>
+              <h1 className="text-3xl sm:text-4xl font-bold leading-tight text-foreground">Heading 1 — The quick brown fox</h1>
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Heading 2 — Jumps over the lazy dog</h2>
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground">Heading 3 — Pack my box with five dozen</h3>
+              <h4 className="text-lg sm:text-xl font-medium text-foreground">Heading 4 — Liquor jugs</h4>
+              <h5 className="text-base sm:text-lg font-medium text-foreground">Heading 5 — How vexingly quick</h5>
               <h6 className="text-base font-medium text-foreground">Heading 6 — Daft zebras jump</h6>
-              <p className="text-lg text-muted-foreground">Subtitle — A supporting line of text used below a headline to provide additional context.</p>
+              <p className="text-base sm:text-lg text-muted-foreground">Subtitle — A supporting line of text used below a headline to provide additional context.</p>
               <p className="text-base text-foreground">Body — Regular paragraph text at 16px. Roboto Regular (400) weight. This is the default body copy for all pages. Keep line lengths between 50–75 characters for optimal readability.</p>
               <p className="text-sm text-muted-foreground">Body Small — Secondary information, metadata, timestamps, and supporting copy at 14px.</p>
               <p className="text-xs text-muted-foreground">Caption — Fine print, labels, and auxiliary information at 12px.</p>
+              <p className="text-sm sm:text-base font-semibold text-primary">Section Label — Used above section headings for context.</p>
               <p className="text-base text-foreground">Text with <span className="text-primary font-bold">orange highlight</span> for emphasis — use sparingly on key terms.</p>
             </div>
           </div>
@@ -217,15 +220,22 @@ const DesignSystem = () => {
               <div className="space-y-4 text-sm">
                 <div className="p-4 rounded-lg border border-border">
                   <p className="font-medium text-foreground">Section Padding (vertical)</p>
-                  <p className="text-muted-foreground mt-1">Desktop: <code className="bg-muted px-1.5 py-0.5 rounded text-xs font-mono">py-20</code> (80px) — Mobile: <code className="bg-muted px-1.5 py-0.5 rounded text-xs font-mono">py-12</code> (48px)</p>
+                  <p className="text-muted-foreground mt-1">Mobile: <code className="bg-muted px-1.5 py-0.5 rounded text-xs font-mono">py-12</code> (48px) → Desktop: <code className="bg-muted px-1.5 py-0.5 rounded text-xs font-mono">py-20</code> (80px)</p>
+                  <p className="text-muted-foreground mt-0.5 font-mono text-xs">py-12 sm:py-20</p>
+                </div>
+                <div className="p-4 rounded-lg border border-border">
+                  <p className="font-medium text-foreground">Container Padding</p>
+                  <p className="text-muted-foreground mt-1">Mobile: <code className="bg-muted px-1.5 py-0.5 rounded text-xs font-mono">px-4</code> → Tablet: <code className="bg-muted px-1.5 py-0.5 rounded text-xs font-mono">px-6</code> → Desktop: <code className="bg-muted px-1.5 py-0.5 rounded text-xs font-mono">px-8</code></p>
+                  <p className="text-muted-foreground mt-0.5 font-mono text-xs">px-4 sm:px-6 lg:px-8</p>
                 </div>
                 <div className="p-4 rounded-lg border border-border">
                   <p className="font-medium text-foreground">Container Max Width</p>
-                  <p className="text-muted-foreground mt-1"><code className="bg-muted px-1.5 py-0.5 rounded text-xs font-mono">max-w-[1400px]</code> with <code className="bg-muted px-1.5 py-0.5 rounded text-xs font-mono">px-8</code> padding</p>
+                  <p className="text-muted-foreground mt-1"><code className="bg-muted px-1.5 py-0.5 rounded text-xs font-mono">max-w-7xl</code> (1280px) or <code className="bg-muted px-1.5 py-0.5 rounded text-xs font-mono">max-w-[1400px]</code></p>
                 </div>
                 <div className="p-4 rounded-lg border border-border">
                   <p className="font-medium text-foreground">Card Internal Padding</p>
-                  <p className="text-muted-foreground mt-1"><code className="bg-muted px-1.5 py-0.5 rounded text-xs font-mono">p-6</code> (24px) consistent on all sides</p>
+                  <p className="text-muted-foreground mt-1">Mobile: <code className="bg-muted px-1.5 py-0.5 rounded text-xs font-mono">p-4</code> → Desktop: <code className="bg-muted px-1.5 py-0.5 rounded text-xs font-mono">p-6</code></p>
+                  <p className="text-muted-foreground mt-0.5 font-mono text-xs">p-4 sm:p-6</p>
                 </div>
                 <div className="p-4 rounded-lg border border-border">
                   <p className="font-medium text-foreground">Heading to Content Gap</p>
@@ -233,7 +243,8 @@ const DesignSystem = () => {
                 </div>
                 <div className="p-4 rounded-lg border border-border">
                   <p className="font-medium text-foreground">Grid Gap</p>
-                  <p className="text-muted-foreground mt-1"><code className="bg-muted px-1.5 py-0.5 rounded text-xs font-mono">gap-6</code> (24px) for card grids, <code className="bg-muted px-1.5 py-0.5 rounded text-xs font-mono">gap-8</code> (32px) for major layouts</p>
+                  <p className="text-muted-foreground mt-1">Mobile: <code className="bg-muted px-1.5 py-0.5 rounded text-xs font-mono">gap-6</code> (24px) → Desktop: <code className="bg-muted px-1.5 py-0.5 rounded text-xs font-mono">gap-8</code> (32px)</p>
+                  <p className="text-muted-foreground mt-0.5 font-mono text-xs">gap-6 sm:gap-8</p>
                 </div>
                 <div className="p-4 rounded-lg border border-border">
                   <p className="font-medium text-foreground">Navbar Height</p>
@@ -362,14 +373,85 @@ const DesignSystem = () => {
         {/* ─── 8. SECTION SPACING DEMO ─── */}
         <Section id="section-spacing" title="Section Spacing Demo" description="Visual demonstration of standard section padding and container behavior.">
           <div className="space-y-4">
-            <div className="rounded-lg border-2 border-dashed border-primary/30 bg-accent/50 py-20 text-center">
-              <p className="text-sm font-mono text-muted-foreground">py-20 (80px) — Desktop section padding</p>
+            <div className="rounded-lg border-2 border-dashed border-primary/30 bg-accent/50 py-12 sm:py-20 text-center">
+              <p className="text-sm font-mono text-muted-foreground">py-12 sm:py-20 — Responsive section padding</p>
             </div>
-            <div className="rounded-lg border-2 border-dashed border-synex-grey-70 bg-muted/50 py-12 text-center">
-              <p className="text-sm font-mono text-muted-foreground">py-12 (48px) — Mobile section padding</p>
+            <div className="rounded-lg border-2 border-dashed border-synex-grey-70 bg-muted/50 py-8 sm:py-12 text-center">
+              <p className="text-sm font-mono text-muted-foreground">py-8 sm:py-12 — Compact section padding</p>
             </div>
-            <div className="rounded-lg border-2 border-dashed border-synex-grey-60 bg-muted/30 py-8 text-center">
-              <p className="text-sm font-mono text-muted-foreground">py-8 (32px) — Compact/inner section padding</p>
+          </div>
+        </Section>
+
+        <Separator />
+
+        {/* ─── 9. BREAKPOINTS ─── */}
+        <Section id="breakpoints" title="Breakpoints & Responsive Adaptations" description="Tailwind breakpoints used throughout the design system. Every component adapts at these thresholds.">
+          <div className="space-y-8">
+            {/* Breakpoint reference */}
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left py-3 pr-6 font-medium text-muted-foreground">Breakpoint</th>
+                    <th className="text-left py-3 pr-6 font-medium text-muted-foreground">Width</th>
+                    <th className="text-left py-3 pr-6 font-medium text-muted-foreground">Device</th>
+                    <th className="text-left py-3 font-medium text-muted-foreground">Key Layout Changes</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border">
+                  <tr><td className="py-3 pr-6 font-mono text-xs">base</td><td className="py-3 pr-6 font-mono text-xs">0–639px</td><td className="py-3 pr-6">Mobile portrait</td><td className="py-3 text-xs text-muted-foreground">Single column, sheet drawer nav, footer nav hidden, reduced padding</td></tr>
+                  <tr><td className="py-3 pr-6 font-mono text-xs">sm (640px)</td><td className="py-3 pr-6 font-mono text-xs">640–767px</td><td className="py-3 pr-6">Mobile landscape</td><td className="py-3 text-xs text-muted-foreground">2-col grids begin, heading sizes scale up, card padding increases</td></tr>
+                  <tr><td className="py-3 pr-6 font-mono text-xs">md (768px)</td><td className="py-3 pr-6 font-mono text-xs">768–1023px</td><td className="py-3 pr-6">Tablet portrait</td><td className="py-3 text-xs text-muted-foreground">Footer nav columns visible, 2-col card grids, form side-by-side fields</td></tr>
+                  <tr><td className="py-3 pr-6 font-mono text-xs">lg (1024px)</td><td className="py-3 pr-6 font-mono text-xs">1024–1279px</td><td className="py-3 pr-6">Tablet landscape</td><td className="py-3 text-xs text-muted-foreground">Navbar full links (no sheet), 3-col grids, bento 6-col grid, hero split layout</td></tr>
+                  <tr><td className="py-3 pr-6 font-mono text-xs">xl (1280px)</td><td className="py-3 pr-6 font-mono text-xs">1280–1399px</td><td className="py-3 pr-6">Desktop</td><td className="py-3 text-xs text-muted-foreground">Full layout, max content width</td></tr>
+                  <tr><td className="py-3 pr-6 font-mono text-xs">2xl (1400px)</td><td className="py-3 pr-6 font-mono text-xs">1400px+</td><td className="py-3 pr-6">Large desktop</td><td className="py-3 text-xs text-muted-foreground">Container max-width caps at 1400px</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* Visual bars */}
+            <div className="space-y-3">
+              <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider">Visual Scale</h3>
+              {[
+                { label: "sm", width: "45%", px: "640px" },
+                { label: "md", width: "55%", px: "768px" },
+                { label: "lg", width: "73%", px: "1024px" },
+                { label: "xl", width: "91%", px: "1280px" },
+                { label: "2xl", width: "100%", px: "1400px" },
+              ].map((bp) => (
+                <div key={bp.label} className="flex items-center gap-3">
+                  <span className="text-xs font-mono text-muted-foreground w-8 text-right">{bp.label}</span>
+                  <div className="h-6 rounded-sm bg-primary/20 relative" style={{ width: bp.width }}>
+                    <span className="absolute right-2 top-1/2 -translate-y-1/2 text-xs font-mono text-primary">{bp.px}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Responsive adaptations table */}
+            <div>
+              <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">Responsive Adaptation Rules</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-border">
+                      <th className="text-left py-3 pr-6 font-medium text-muted-foreground">Token</th>
+                      <th className="text-left py-3 pr-6 font-medium text-muted-foreground">Mobile (base)</th>
+                      <th className="text-left py-3 pr-6 font-medium text-muted-foreground">Desktop (sm+)</th>
+                      <th className="text-left py-3 font-medium text-muted-foreground">Tailwind Pattern</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-border">
+                    <tr><td className="py-3 pr-6">Section padding</td><td className="py-3 pr-6 font-mono text-xs">py-12 (48px)</td><td className="py-3 pr-6 font-mono text-xs">py-20 (80px)</td><td className="py-3 font-mono text-xs">py-12 sm:py-20</td></tr>
+                    <tr><td className="py-3 pr-6">Container padding</td><td className="py-3 pr-6 font-mono text-xs">px-4 (16px)</td><td className="py-3 pr-6 font-mono text-xs">px-6 → px-8</td><td className="py-3 font-mono text-xs">px-4 sm:px-6 lg:px-8</td></tr>
+                    <tr><td className="py-3 pr-6">Card padding</td><td className="py-3 pr-6 font-mono text-xs">p-4 (16px)</td><td className="py-3 pr-6 font-mono text-xs">p-6 (24px)</td><td className="py-3 font-mono text-xs">p-4 sm:p-6</td></tr>
+                    <tr><td className="py-3 pr-6">Card radius</td><td className="py-3 pr-6 font-mono text-xs">rounded-xl</td><td className="py-3 pr-6 font-mono text-xs">rounded-2xl</td><td className="py-3 font-mono text-xs">rounded-xl sm:rounded-2xl</td></tr>
+                    <tr><td className="py-3 pr-6">Grid gap</td><td className="py-3 pr-6 font-mono text-xs">gap-6 (24px)</td><td className="py-3 pr-6 font-mono text-xs">gap-8 (32px)</td><td className="py-3 font-mono text-xs">gap-6 sm:gap-8</td></tr>
+                    <tr><td className="py-3 pr-6">Navbar</td><td className="py-3 pr-6 font-mono text-xs">Sheet drawer</td><td className="py-3 pr-6 font-mono text-xs">Full links</td><td className="py-3 font-mono text-xs">hidden lg:flex / lg:hidden</td></tr>
+                    <tr><td className="py-3 pr-6">Footer nav</td><td className="py-3 pr-6 font-mono text-xs">Hidden</td><td className="py-3 pr-6 font-mono text-xs">3-col grid</td><td className="py-3 font-mono text-xs">hidden md:grid</td></tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </Section>
@@ -470,6 +552,9 @@ const DesignSystem = () => {
                 <PageHeaderHeroGrid tag="Resources" title="Guides & Articles" description="Expert insights on EU regulatory compliance." />
                 <PageHeaderAccentBar tag="About" title="Our Team" description="Meet the compliance experts behind SynexCloud." />
               </div>
+            </SectionShowcase>
+            <SectionShowcase name="Footer" code={footerCode}>
+              <Footer />
             </SectionShowcase>
           </div>
         </Section>
