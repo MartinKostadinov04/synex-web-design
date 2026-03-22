@@ -451,6 +451,10 @@ const DesignSystem = () => {
             <SectionShowcase name="Practical Guide — Numbered Steps" code={practicalGuideCode}>
               <PracticalGuideSection />
             </SectionShowcase>
+            </SectionShowcase>
+            <SectionShowcase name="Battery Passport — Overview with Stakeholders" code={batteryPassportOverviewCode}>
+              <BatteryPassportOverview />
+            </SectionShowcase>
           </div>
         </Section>
       </main>
