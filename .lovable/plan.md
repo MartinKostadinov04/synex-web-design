@@ -1,45 +1,58 @@
 
 
-## Battery Regulation Page Rebuild
+## Web Design System Page
 
-### Page Structure (5 sections)
+Build a live `/design-system` page that demonstrates all SynexCloud/Synex brand specifications in one interactive reference -- colors, typography, spacing, radii, buttons, cards, and component patterns. This page will serve as the single source of truth for any AI or developer reimplementing the website.
 
-**1. Hero Section (redesigned)**
-The current hero is a full-bleed stock photo with centered text floating over a dark overlay -- generic and uninspiring. Replace with a split-layout hero: left side has heading, subtext, and a CTA button; right side uses a clean illustration or a styled image with rounded corners and subtle shadow. White/light background, no dark overlay. This feels more professional and intentional.
+### Brand Data (from PDFs)
 
-**2. "The Battery Regulation" -- Key Requirements (kept, polished)**
-You're fine with this. I'll rebuild it faithfully: intro paragraph, then a 2x2 grid of requirement items (icon + title + description). Clean spacing, no unnecessary animation. Static fade-in on scroll at most.
+**Primary Colors:**
+- Primary Orange: #F2641F
+- Primary Grey: #474747
+- Primary White: #FFFFFF
 
-**3. "Forget about compliance complexity" (reworked)**
-The current version uses 4 cards that feel disconnected and repetitive. Proposal: replace with a **2-column layout** -- left side has a bold heading + short paragraph + CTA link, right side has a compact list of 4 benefits as icon-text rows (not cards). This reduces visual weight and avoids the "wall of samey cards" problem. Alternatively, a single horizontal banner with inline benefit chips.
+**Secondary Colors:**
+- Secondary Orange: #F8AC86
+- Secondary Grey-70: #0D0D0D (note: PDF label says "grey-70" but the swatch looks like #B2B2B2 -- the parsed hex #0D0D0D seems like a parsing error; will use #B2B2B2 based on the visual)
+- Secondary Grey-60: #999999
 
-**4. "What can we do for you?" tabs section (rebuilt cleanly)**
-Keep the tabbed interface but use shadcn Tabs component properly. Clean tab headers, smooth content transitions (simple opacity, no bouncy animations).
+**Typography Colors:**
+- Text-Grey-20: #333333 (titles, headlines, big captions)
+- Text-Grey-30: #4C4C4C (long descriptive text, small font)
+- Web-Navy-1: #1F2937 (titles/headlines on web)
+- Web-Navy-2: #4B5563 (descriptive text on web)
+- Primary Orange #F2641F for highlighted text and main titles
 
-**5. CTA Section**
-Simple centered block: heading, one-line description, button. Possibly with a subtle background color change.
+**Font Family:** Roboto (user-specified)
 
-### Animation Strategy
-- Remove all current animations. Use only: `animate-fade-in` on scroll-triggered sections via Intersection Observer.
-- No parallax, no bouncing, no staggered card entrances.
+### What the Page Will Contain
 
-### Components Used
-- Custom `HeroSection` component (split layout)
-- shadcn `Card` for requirement items in section 2
-- Custom `BenefitsList` for section 3 (no cards)
-- shadcn `Tabs` for section 4
-- Custom `CTABanner` for section 5
-- Shared `Navbar` and `Footer` components
+1. **Color Palette** -- swatches for all primary, secondary, and typography colors with hex/RGB values and usage notes
+2. **Typography Scale** -- H1 through H6, subtitle, body, small/caption, all rendered live with Roboto, showing size, weight, line-height, letter-spacing, and default color
+3. **Spacing System** -- visual blocks showing the spacing scale (4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96px) with section padding recommendations
+4. **Border Radius** -- visual examples of sm/md/lg/xl/full radius tokens
+5. **Buttons** -- all variants (primary, outline, secondary, ghost, link) at default/sm/lg sizes
+6. **Cards** -- card component with header, description, content, footer
+7. **Form Elements** -- input, textarea, select, checkbox examples
+8. **Section Spacing Guidelines** -- recommended padding between page sections, container max-widths
 
 ### Files to Create/Modify
-- `src/pages/BatteryReg.tsx` -- main page composing all sections
-- `src/components/battery-reg/HeroSection.tsx`
-- `src/components/battery-reg/KeyRequirements.tsx`
-- `src/components/battery-reg/ComplianceBenefits.tsx`
-- `src/components/battery-reg/ServicesTabsSection.tsx`
-- `src/components/battery-reg/ConsultationCTA.tsx`
-- `src/components/Navbar.tsx` and `src/components/Footer.tsx`
-- `src/App.tsx` -- add `/batteryreg` route
-- `tailwind.config.ts` -- add fade-in keyframe if not present
-- `src/index.css` -- add brand colors (SynexCloud orange `#E8611A`, dark grays)
+
+| File | Action |
+|------|--------|
+| `src/pages/DesignSystem.tsx` | Create -- main design system page with all sections |
+| `src/App.tsx` | Add `/design-system` route |
+| `src/index.css` | Update CSS variables to match exact brand colors; add Roboto import |
+| `tailwind.config.ts` | Add brand color tokens (synex-orange, synex-grey, etc.) and font-family |
+| `index.html` | Add Google Fonts link for Roboto |
+| `mem://index.md` | Update memory with finalized brand specs |
+
+### Technical Details
+
+- Import Roboto (400, 500, 700) from Google Fonts
+- Map brand colors to CSS custom properties and extend Tailwind config
+- The design system page will use the project's own components (Button, Card, Input, etc.) rendered as live examples
+- Each section gets a clear heading, a brief usage guideline, and the live rendered component
+- The page itself will use Navbar + Footer for consistency
+- Update `--foreground` to use Web-Navy-1 (#1F2937) and `--muted-foreground` to Web-Navy-2 (#4B5563) per the typography PDF
 
