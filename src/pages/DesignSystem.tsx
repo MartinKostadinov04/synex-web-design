@@ -32,6 +32,7 @@ import {
   complianceBenefitsCode,
   servicesTabsCode,
   consultationCtaCode,
+  logoCloudCode,
 } from "@/components/design-system/section-codes";
 
 /* ─── Helpers ─── */
