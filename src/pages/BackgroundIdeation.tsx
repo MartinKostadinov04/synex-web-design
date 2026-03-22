@@ -17,6 +17,7 @@ const strategies: { key: Strategy; label: string; description: string }[] = [
   { key: "D", label: "Pattern + Gradient", description: "Dot pattern overlay with diagonal gradient. Adds texture and depth without imagery." },
   { key: "E", label: "Brand Warm Wash", description: "Subtle orange glow radiates from hero downward, fading to white. Branded but soft." },
   { key: "F", label: "Navy Bookends", description: "Dark navy hero + footer with light middle sections. Creates strong visual anchoring." },
+  { key: "G", label: "Grid Pattern", description: "SVG grid backdrop on alternating sections. Adds structure and technical feel without heaviness." },
 ];
 
 const BackgroundIdeation = () => {
