@@ -46,6 +46,7 @@ import {
   contactSectionCode,
   contactDialogCode,
   demosSectionCode,
+  practicalGuideCode,
 } from "@/components/design-system/section-codes";
 
 /* ─── Helpers ─── */
