@@ -152,7 +152,7 @@ const DesignSystem = () => {
         <Separator />
 
         {/* ─── 2. TYPOGRAPHY ─── */}
-        <Section id="typography" title="Typography" description="Roboto is the brand typeface. Weights: 400 (Regular), 500 (Medium), 700 (Bold). All sizes use rem units.">
+        <Section id="typography" title="Typography" description="Roboto is the brand typeface. Weights: 400 (Regular), 500 (Medium), 700 (Bold). All sizes use rem units. Responsive rules scale headings down on mobile.">
           <div className="space-y-8">
             {/* Scale table */}
             <div className="overflow-x-auto">
@@ -160,41 +160,43 @@ const DesignSystem = () => {
                 <thead>
                   <tr className="border-b border-border">
                     <th className="text-left py-3 pr-6 font-medium text-muted-foreground">Element</th>
-                    <th className="text-left py-3 pr-6 font-medium text-muted-foreground">Size</th>
+                    <th className="text-left py-3 pr-6 font-medium text-muted-foreground">Desktop</th>
+                    <th className="text-left py-3 pr-6 font-medium text-muted-foreground">Mobile</th>
                     <th className="text-left py-3 pr-6 font-medium text-muted-foreground">Weight</th>
-                    <th className="text-left py-3 pr-6 font-medium text-muted-foreground">Line Height</th>
                     <th className="text-left py-3 pr-6 font-medium text-muted-foreground">Color</th>
                     <th className="text-left py-3 font-medium text-muted-foreground">Tailwind Classes</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border">
-                  <tr><td className="py-3 pr-6">H1</td><td className="py-3 pr-6 font-mono text-xs">2.5rem (40px)</td><td className="py-3 pr-6">700</td><td className="py-3 pr-6">1.2</td><td className="py-3 pr-6">foreground</td><td className="py-3 font-mono text-xs">text-4xl font-bold leading-tight</td></tr>
-                  <tr><td className="py-3 pr-6">H2</td><td className="py-3 pr-6 font-mono text-xs">2rem (32px)</td><td className="py-3 pr-6">700</td><td className="py-3 pr-6">1.25</td><td className="py-3 pr-6">foreground</td><td className="py-3 font-mono text-xs">text-3xl font-bold</td></tr>
-                  <tr><td className="py-3 pr-6">H3</td><td className="py-3 pr-6 font-mono text-xs">1.5rem (24px)</td><td className="py-3 pr-6">700</td><td className="py-3 pr-6">1.3</td><td className="py-3 pr-6">foreground</td><td className="py-3 font-mono text-xs">text-2xl font-bold</td></tr>
-                  <tr><td className="py-3 pr-6">H4</td><td className="py-3 pr-6 font-mono text-xs">1.25rem (20px)</td><td className="py-3 pr-6">500</td><td className="py-3 pr-6">1.4</td><td className="py-3 pr-6">foreground</td><td className="py-3 font-mono text-xs">text-xl font-medium</td></tr>
-                  <tr><td className="py-3 pr-6">H5</td><td className="py-3 pr-6 font-mono text-xs">1.125rem (18px)</td><td className="py-3 pr-6">500</td><td className="py-3 pr-6">1.4</td><td className="py-3 pr-6">foreground</td><td className="py-3 font-mono text-xs">text-lg font-medium</td></tr>
-                  <tr><td className="py-3 pr-6">H6</td><td className="py-3 pr-6 font-mono text-xs">1rem (16px)</td><td className="py-3 pr-6">500</td><td className="py-3 pr-6">1.5</td><td className="py-3 pr-6">foreground</td><td className="py-3 font-mono text-xs">text-base font-medium</td></tr>
-                  <tr><td className="py-3 pr-6">Subtitle</td><td className="py-3 pr-6 font-mono text-xs">1.125rem (18px)</td><td className="py-3 pr-6">400</td><td className="py-3 pr-6">1.6</td><td className="py-3 pr-6">muted-foreground</td><td className="py-3 font-mono text-xs">text-lg text-muted-foreground</td></tr>
-                  <tr><td className="py-3 pr-6">Body</td><td className="py-3 pr-6 font-mono text-xs">1rem (16px)</td><td className="py-3 pr-6">400</td><td className="py-3 pr-6">1.6</td><td className="py-3 pr-6">foreground</td><td className="py-3 font-mono text-xs">text-base</td></tr>
-                  <tr><td className="py-3 pr-6">Body Small</td><td className="py-3 pr-6 font-mono text-xs">0.875rem (14px)</td><td className="py-3 pr-6">400</td><td className="py-3 pr-6">1.5</td><td className="py-3 pr-6">muted-foreground</td><td className="py-3 font-mono text-xs">text-sm text-muted-foreground</td></tr>
-                  <tr><td className="py-3 pr-6">Caption</td><td className="py-3 pr-6 font-mono text-xs">0.75rem (12px)</td><td className="py-3 pr-6">400</td><td className="py-3 pr-6">1.5</td><td className="py-3 pr-6">muted-foreground</td><td className="py-3 font-mono text-xs">text-xs text-muted-foreground</td></tr>
+                  <tr><td className="py-3 pr-6">H1</td><td className="py-3 pr-6 font-mono text-xs">2.5rem (40px)</td><td className="py-3 pr-6 font-mono text-xs">1.875rem (30px)</td><td className="py-3 pr-6">700</td><td className="py-3 pr-6">foreground</td><td className="py-3 font-mono text-xs">text-3xl sm:text-4xl font-bold</td></tr>
+                  <tr><td className="py-3 pr-6">H2</td><td className="py-3 pr-6 font-mono text-xs">2rem (32px)</td><td className="py-3 pr-6 font-mono text-xs">1.5rem (24px)</td><td className="py-3 pr-6">700</td><td className="py-3 pr-6">foreground</td><td className="py-3 font-mono text-xs">text-2xl sm:text-3xl font-bold</td></tr>
+                  <tr><td className="py-3 pr-6">H3</td><td className="py-3 pr-6 font-mono text-xs">1.5rem (24px)</td><td className="py-3 pr-6 font-mono text-xs">1.25rem (20px)</td><td className="py-3 pr-6">700</td><td className="py-3 pr-6">foreground</td><td className="py-3 font-mono text-xs">text-xl sm:text-2xl font-bold</td></tr>
+                  <tr><td className="py-3 pr-6">H4</td><td className="py-3 pr-6 font-mono text-xs">1.25rem (20px)</td><td className="py-3 pr-6 font-mono text-xs">1.125rem (18px)</td><td className="py-3 pr-6">500</td><td className="py-3 pr-6">foreground</td><td className="py-3 font-mono text-xs">text-lg sm:text-xl font-medium</td></tr>
+                  <tr><td className="py-3 pr-6">H5</td><td className="py-3 pr-6 font-mono text-xs">1.125rem (18px)</td><td className="py-3 pr-6 font-mono text-xs">1rem (16px)</td><td className="py-3 pr-6">500</td><td className="py-3 pr-6">foreground</td><td className="py-3 font-mono text-xs">text-base sm:text-lg font-medium</td></tr>
+                  <tr><td className="py-3 pr-6">H6</td><td className="py-3 pr-6 font-mono text-xs">1rem (16px)</td><td className="py-3 pr-6 font-mono text-xs">1rem (16px)</td><td className="py-3 pr-6">500</td><td className="py-3 pr-6">foreground</td><td className="py-3 font-mono text-xs">text-base font-medium</td></tr>
+                  <tr><td className="py-3 pr-6">Subtitle</td><td className="py-3 pr-6 font-mono text-xs">1.125rem (18px)</td><td className="py-3 pr-6 font-mono text-xs">1rem (16px)</td><td className="py-3 pr-6">400</td><td className="py-3 pr-6">muted-foreground</td><td className="py-3 font-mono text-xs">text-base sm:text-lg text-muted-foreground</td></tr>
+                  <tr><td className="py-3 pr-6">Body</td><td className="py-3 pr-6 font-mono text-xs">1rem (16px)</td><td className="py-3 pr-6 font-mono text-xs">1rem (16px)</td><td className="py-3 pr-6">400</td><td className="py-3 pr-6">foreground</td><td className="py-3 font-mono text-xs">text-base</td></tr>
+                  <tr><td className="py-3 pr-6">Body Small</td><td className="py-3 pr-6 font-mono text-xs">0.875rem (14px)</td><td className="py-3 pr-6 font-mono text-xs">0.875rem (14px)</td><td className="py-3 pr-6">400</td><td className="py-3 pr-6">muted-foreground</td><td className="py-3 font-mono text-xs">text-sm text-muted-foreground</td></tr>
+                  <tr><td className="py-3 pr-6">Caption</td><td className="py-3 pr-6 font-mono text-xs">0.75rem (12px)</td><td className="py-3 pr-6 font-mono text-xs">0.75rem (12px)</td><td className="py-3 pr-6">400</td><td className="py-3 pr-6">muted-foreground</td><td className="py-3 font-mono text-xs">text-xs text-muted-foreground</td></tr>
+                  <tr><td className="py-3 pr-6">Section Label</td><td className="py-3 pr-6 font-mono text-xs">1rem (16px)</td><td className="py-3 pr-6 font-mono text-xs">0.875rem (14px)</td><td className="py-3 pr-6">600</td><td className="py-3 pr-6">primary</td><td className="py-3 font-mono text-xs">text-sm sm:text-base font-semibold text-primary</td></tr>
                 </tbody>
               </table>
             </div>
 
             {/* Live preview */}
-            <div className="space-y-6 p-8 rounded-lg border border-border bg-card">
+            <div className="space-y-6 p-4 sm:p-8 rounded-lg border border-border bg-card">
               <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-4">Live Preview</h3>
-              <h1 className="text-4xl font-bold leading-tight text-foreground">Heading 1 — The quick brown fox</h1>
-              <h2 className="text-3xl font-bold text-foreground">Heading 2 — Jumps over the lazy dog</h2>
-              <h3 className="text-2xl font-bold text-foreground">Heading 3 — Pack my box with five dozen</h3>
-              <h4 className="text-xl font-medium text-foreground">Heading 4 — Liquor jugs</h4>
-              <h5 className="text-lg font-medium text-foreground">Heading 5 — How vexingly quick</h5>
+              <h1 className="text-3xl sm:text-4xl font-bold leading-tight text-foreground">Heading 1 — The quick brown fox</h1>
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Heading 2 — Jumps over the lazy dog</h2>
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground">Heading 3 — Pack my box with five dozen</h3>
+              <h4 className="text-lg sm:text-xl font-medium text-foreground">Heading 4 — Liquor jugs</h4>
+              <h5 className="text-base sm:text-lg font-medium text-foreground">Heading 5 — How vexingly quick</h5>
               <h6 className="text-base font-medium text-foreground">Heading 6 — Daft zebras jump</h6>
-              <p className="text-lg text-muted-foreground">Subtitle — A supporting line of text used below a headline to provide additional context.</p>
+              <p className="text-base sm:text-lg text-muted-foreground">Subtitle — A supporting line of text used below a headline to provide additional context.</p>
               <p className="text-base text-foreground">Body — Regular paragraph text at 16px. Roboto Regular (400) weight. This is the default body copy for all pages. Keep line lengths between 50–75 characters for optimal readability.</p>
               <p className="text-sm text-muted-foreground">Body Small — Secondary information, metadata, timestamps, and supporting copy at 14px.</p>
               <p className="text-xs text-muted-foreground">Caption — Fine print, labels, and auxiliary information at 12px.</p>
+              <p className="text-sm sm:text-base font-semibold text-primary">Section Label — Used above section headings for context.</p>
               <p className="text-base text-foreground">Text with <span className="text-primary font-bold">orange highlight</span> for emphasis — use sparingly on key terms.</p>
             </div>
           </div>
