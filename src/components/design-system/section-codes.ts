@@ -581,3 +581,369 @@ const BlogSection = () => (
 );
 
 export default BlogSection;`;
+
+export const batteryHeroCode = `import { Button } from "@/components/ui/button";
+import { ArrowRight, Shield } from "lucide-react";
+
+const HeroSection = () => (
+  <section className="py-20 lg:py-28">
+    <div className="container">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        {/* Left: Copy */}
+        <div className="space-y-6">
+          <div className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-1.5 text-sm font-medium text-accent-foreground">
+            <Shield className="h-4 w-4" />
+            EU Battery Regulation
+          </div>
+          <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold leading-[1.15] tracking-tight text-foreground">
+            Navigate Battery Regulation with Confidence
+          </h1>
+          <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
+            The EU Battery Regulation (2023/1542) introduces comprehensive requirements for all batteries placed on the EU market. We help you understand, plan, and achieve full compliance — without the complexity.
+          </p>
+          <div className="flex flex-wrap gap-3 pt-2">
+            <Button size="lg" className="gap-2">
+              Get Started <ArrowRight className="h-4 w-4" />
+            </Button>
+            <Button size="lg" variant="outline">
+              Learn More
+            </Button>
+          </div>
+        </div>
+
+        {/* Right: Visual */}
+        <div className="relative flex justify-center lg:justify-end">
+          <div className="relative w-full max-w-md">
+            <div className="absolute -inset-4 rounded-2xl bg-primary/5 blur-2xl" />
+            <div className="relative rounded-2xl border border-border bg-card p-8 shadow-lg space-y-5">
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <Shield className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground text-sm">Compliance Status</p>
+                  <p className="text-xs text-muted-foreground">EU Battery Regulation 2023/1542</p>
+                </div>
+              </div>
+              <div className="space-y-3">
+                {[
+                  { label: "Battery Passport", progress: 85 },
+                  { label: "Due Diligence", progress: 72 },
+                  { label: "Carbon Footprint", progress: 60 },
+                  { label: "Recycled Content", progress: 45 },
+                ].map((item) => (
+                  <div key={item.label} className="space-y-1.5">
+                    <div className="flex justify-between text-xs">
+                      <span className="text-muted-foreground">{item.label}</span>
+                      <span className="font-medium text-foreground">{item.progress}%</span>
+                    </div>
+                    <div className="h-1.5 rounded-full bg-secondary overflow-hidden">
+                      <div
+                        className="h-full rounded-full bg-primary transition-all duration-700"
+                        style={{ width: \`\${item.progress}%\` }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+export default HeroSection;`;
+
+export const keyRequirementsCode = `import { Card, CardContent } from "@/components/ui/card";
+import { FileText, Recycle, Leaf, Search } from "lucide-react";
+import { useScrollFade } from "@/hooks/use-scroll-fade";
+
+const requirements = [
+  {
+    icon: FileText,
+    title: "Battery Passport",
+    description:
+      "Every industrial and EV battery must carry a digital product passport containing information about its composition, origin, carbon footprint, and recycled content.",
+  },
+  {
+    icon: Search,
+    title: "Due Diligence",
+    description:
+      "Economic operators must implement due diligence policies covering sourcing of raw materials, particularly cobalt, lithium, nickel, and natural graphite.",
+  },
+  {
+    icon: Leaf,
+    title: "Carbon Footprint Declaration",
+    description:
+      "Manufacturers must declare the carbon footprint of batteries throughout their lifecycle — from raw material extraction to end-of-life processing.",
+  },
+  {
+    icon: Recycle,
+    title: "Recycled Content",
+    description:
+      "Minimum levels of recycled cobalt, lithium, nickel, and lead must be present in new batteries, with targets increasing over time.",
+  },
+];
+
+const KeyRequirements = () => {
+  const { ref, isVisible } = useScrollFade();
+
+  return (
+    <section ref={ref} className="py-20 bg-secondary/40">
+      <div
+        className={\`container transition-all duration-700 \${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+        }\`}
+      >
+        <div className="max-w-2xl mx-auto text-center mb-12">
+          <h2 className="text-3xl font-bold text-foreground mb-4">
+            The Battery Regulation
+          </h2>
+          <p className="text-muted-foreground leading-relaxed">
+            Regulation (EU) 2023/1542 sets out comprehensive sustainability and safety requirements for all batteries placed on the EU market. Here are the key pillars you need to address.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {requirements.map((req) => (
+            <Card key={req.title} className="border-border hover:shadow-md transition-shadow">
+              <CardContent className="p-6">
+                <div className="flex gap-4">
+                  <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <req.icon className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-1.5">{req.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {req.description}
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default KeyRequirements;`;
+
+export const complianceBenefitsCode = `import { CheckCircle, ArrowRight } from "lucide-react";
+import { useScrollFade } from "@/hooks/use-scroll-fade";
+
+const benefits = [
+  "End-to-end compliance roadmap tailored to your battery type and market",
+  "Automated data collection for Battery Passport requirements",
+  "Supply chain due diligence management and audit preparation",
+  "Carbon footprint calculation aligned with EU methodology",
+];
+
+const ComplianceBenefits = () => {
+  const { ref, isVisible } = useScrollFade();
+
+  return (
+    <section ref={ref} className="py-20">
+      <div
+        className={\`container transition-all duration-700 \${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+        }\`}
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+          {/* Left: Message */}
+          <div className="space-y-5">
+            <h2 className="text-3xl font-bold text-foreground leading-tight">
+              Forget about compliance complexity
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Battery regulation compliance doesn't have to be overwhelming. Our structured approach breaks down every requirement into clear, manageable steps — so you can focus on your product, not paperwork.
+            </p>
+            <a
+              href="/contact"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+            >
+              Talk to an expert <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
+
+          {/* Right: Benefit list */}
+          <div className="space-y-4">
+            {benefits.map((benefit, i) => (
+              <div
+                key={i}
+                className="flex gap-3 items-start p-4 rounded-lg bg-secondary/60 border border-border"
+              >
+                <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                <p className="text-sm text-foreground leading-relaxed">{benefit}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ComplianceBenefits;`;
+
+export const servicesTabsCode = `import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { FileText, BarChart3, ShieldCheck, Recycle } from "lucide-react";
+import { useScrollFade } from "@/hooks/use-scroll-fade";
+
+const tabs = [
+  {
+    value: "passport",
+    label: "Battery Passport",
+    icon: FileText,
+    title: "Digital Battery Passport Setup",
+    description:
+      "We help you design and implement a fully compliant digital battery passport — covering unique identifiers, material composition, carbon footprint data, and supply chain traceability. Our platform automates data collection across your value chain.",
+    features: [
+      "Unique battery identifier management",
+      "Material composition tracking",
+      "QR code and data carrier integration",
+      "Interoperability with EU systems",
+    ],
+  },
+  {
+    value: "carbon",
+    label: "Carbon Footprint",
+    icon: BarChart3,
+    title: "Carbon Footprint Declaration",
+    description:
+      "Calculate and declare the carbon footprint of your batteries across the entire lifecycle. We align your methodology with the EU's delegated acts and help you move toward the required performance classes.",
+    features: [
+      "Lifecycle assessment (LCA) support",
+      "Scope 1, 2 & 3 emissions mapping",
+      "Performance class benchmarking",
+      "Third-party verification preparation",
+    ],
+  },
+  {
+    value: "diligence",
+    label: "Due Diligence",
+    icon: ShieldCheck,
+    title: "Supply Chain Due Diligence",
+    description:
+      "Establish robust due diligence policies for raw material sourcing. We guide you through risk identification, mitigation strategies, and reporting obligations aligned with OECD frameworks and EU requirements.",
+    features: [
+      "Raw material risk assessment",
+      "Supplier audit framework",
+      "Grievance mechanism setup",
+      "Annual reporting templates",
+    ],
+  },
+  {
+    value: "recycling",
+    label: "Recycled Content",
+    icon: Recycle,
+    title: "Recycled Content Compliance",
+    description:
+      "Meet the EU's recycled content targets for cobalt, lithium, nickel, and lead. We help you track recycled material flows, establish documentation, and prepare for the mandatory thresholds taking effect in 2028 and 2031.",
+    features: [
+      "Recycled content calculation methodology",
+      "Material flow documentation",
+      "Supplier certification tracking",
+      "Target roadmap planning",
+    ],
+  },
+];
+
+const ServicesTabsSection = () => {
+  const { ref, isVisible } = useScrollFade();
+
+  return (
+    <section ref={ref} className="py-20 bg-secondary/40">
+      <div
+        className={\`container transition-all duration-700 \${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+        }\`}
+      >
+        <div className="max-w-2xl mx-auto text-center mb-10">
+          <h2 className="text-3xl font-bold text-foreground mb-4">
+            What can we do for you?
+          </h2>
+          <p className="text-muted-foreground leading-relaxed">
+            Our services cover every pillar of the EU Battery Regulation. Choose an area to learn more.
+          </p>
+        </div>
+
+        <Tabs defaultValue="passport" className="max-w-4xl mx-auto">
+          <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 h-auto gap-1 bg-secondary p-1">
+            {tabs.map((tab) => (
+              <TabsTrigger
+                key={tab.value}
+                value={tab.value}
+                className="gap-1.5 text-xs md:text-sm py-2.5 data-[state=active]:bg-background"
+              >
+                <tab.icon className="h-4 w-4" />
+                <span className="hidden sm:inline">{tab.label}</span>
+              </TabsTrigger>
+            ))}
+          </TabsList>
+
+          {tabs.map((tab) => (
+            <TabsContent key={tab.value} value={tab.value} className="mt-6">
+              <div className="rounded-lg border border-border bg-card p-6 md:p-8">
+                <h3 className="text-xl font-semibold text-foreground mb-3">
+                  {tab.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed mb-5">
+                  {tab.description}
+                </p>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  {tab.features.map((feature) => (
+                    <li
+                      key={feature}
+                      className="flex items-center gap-2 text-sm text-foreground"
+                    >
+                      <div className="h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </TabsContent>
+          ))}
+        </Tabs>
+      </div>
+    </section>
+  );
+};
+
+export default ServicesTabsSection;`;
+
+export const consultationCtaCode = `import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import { useScrollFade } from "@/hooks/use-scroll-fade";
+
+const ConsultationCTA = () => {
+  const { ref, isVisible } = useScrollFade();
+
+  return (
+    <section ref={ref} className="py-20">
+      <div
+        className={\`container transition-all duration-700 \${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+        }\`}
+      >
+        <div className="max-w-2xl mx-auto text-center space-y-5">
+          <h2 className="text-3xl font-bold text-foreground">
+            Get a free consultation
+          </h2>
+          <p className="text-muted-foreground leading-relaxed">
+            Not sure where you stand with the EU Battery Regulation? Let's assess your compliance gaps together — no commitment required.
+          </p>
+          <Button size="lg" className="gap-2">
+            Schedule a Call <ArrowRight className="h-4 w-4" />
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ConsultationCTA;`;

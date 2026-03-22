@@ -387,6 +387,26 @@ const DesignSystem = () => {
             <SectionShowcase name="Three-column blog" code={blogCode}>
               <BlogSection />
             </SectionShowcase>
+
+            <SectionShowcase name="Battery Reg — Hero" code={batteryHeroCode}>
+              <BatteryHeroSection />
+            </SectionShowcase>
+
+            <SectionShowcase name="Battery Reg — Key Requirements" code={keyRequirementsCode}>
+              <KeyRequirements />
+            </SectionShowcase>
+
+            <SectionShowcase name="Battery Reg — Compliance Benefits" code={complianceBenefitsCode}>
+              <ComplianceBenefits />
+            </SectionShowcase>
+
+            <SectionShowcase name="Battery Reg — Services Tabs" code={servicesTabsCode}>
+              <ServicesTabsSection />
+            </SectionShowcase>
+
+            <SectionShowcase name="Battery Reg — Consultation CTA" code={consultationCtaCode}>
+              <ConsultationCTA />
+            </SectionShowcase>
           </div>
         </Section>
       </main>
