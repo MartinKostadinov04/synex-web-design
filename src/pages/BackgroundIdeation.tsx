@@ -111,10 +111,20 @@ const BackgroundIdeation = () => {
         </div>
       </div>
 
+      {/* Force all child section/div backgrounds transparent so wrapper bg shows */}
+      <style>{`
+        .bg-ideation-wrap > div > section,
+        .bg-ideation-wrap > div > div,
+        .bg-ideation-wrap > section,
+        .bg-ideation-wrap > div {
+          background: transparent !important;
+        }
+      `}</style>
+
       <main className="flex-1">
         {/* 0: Hero */}
         <div
-          className={`relative overflow-hidden ${active === "F" ? navyTextClass : ""}`}
+          className={`relative overflow-hidden bg-ideation-wrap ${active === "F" ? navyTextClass : ""}`}
           style={sectionStyle(0)}
         >
           {renderDotOverlay()}
@@ -122,25 +132,25 @@ const BackgroundIdeation = () => {
         </div>
 
         {/* 1: Logo Cloud */}
-        <div className="relative overflow-hidden" style={sectionStyle(1)}>
+        <div className="relative overflow-hidden bg-ideation-wrap" style={sectionStyle(1)}>
           {renderDotOverlay()}
           <LogoCloudSection />
         </div>
 
-        {/* 2: Features — already has its own gradient bg, override it for non-D modes */}
-        <div className="relative overflow-hidden" style={sectionStyle(2)}>
+        {/* 2: Features */}
+        <div className="relative overflow-hidden bg-ideation-wrap" style={sectionStyle(2)}>
           {renderDotOverlay()}
           <FeaturesSection />
         </div>
 
         {/* 3: Bento */}
-        <div className="relative overflow-hidden" style={sectionStyle(3)}>
+        <div className="relative overflow-hidden bg-ideation-wrap" style={sectionStyle(3)}>
           {renderDotOverlay()}
           <BentoSection />
         </div>
 
         {/* 4: Contact */}
-        <div className="relative overflow-hidden" style={sectionStyle(4)}>
+        <div className="relative overflow-hidden bg-ideation-wrap" style={sectionStyle(4)}>
           {renderDotOverlay()}
           <ContactSection />
         </div>
