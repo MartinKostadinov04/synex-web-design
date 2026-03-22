@@ -95,6 +95,487 @@ const Section = ({ id, title, description, children }: { id: string; title: stri
   </section>
 );
 
+/* ─── AI Prompt Window ─── */
+const AI_PROMPT = `# SynexCloud Design System — AI Agent Prompt
+
+You are building pages for **SynexCloud**, a B2B compliance consulting + SaaS company helping manufacturers navigate EU Battery Regulation and ESPR. Every UI you produce must follow this design system exactly.
+
+---
+
+## 1. Brand Identity
+
+- **Company**: SynexCloud (short: Synex)
+- **Logo**: \`src/assets/logo.svg\` — always render at \`h-7\` (28px)
+- **Tone of voice**: Professional, clear, confident. Not overly technical. Modern B2B — think "trusted advisor", not "enterprise bureaucracy."
+- **Audience**: Manufacturers, compliance teams, sustainability officers, supply chain managers
+
+---
+
+## 2. Technology Stack
+
+- **Framework**: React 18 + TypeScript + Vite
+- **Styling**: Tailwind CSS v3 with \`tailwindcss-animate\`
+- **UI library**: shadcn/ui (Radix primitives)
+- **Icons**: Lucide React (\`lucide-react\`) — never use Heroicons
+- **Font**: Roboto (400, 500, 700) via Google Fonts
+- **Routing**: react-router-dom v6
+
+---
+
+## 3. Color System
+
+All colors are defined as HSL values (without the \`hsl()\` wrapper) in CSS custom properties in \`index.css\`. In Tailwind, they are consumed as \`hsl(var(--token))\`.
+
+**CRITICAL RULE**: Never use raw hex/rgb colors in components. Always use semantic tokens.
+
+### Semantic Tokens
+
+| Token | HSL | Hex | Usage |
+|---|---|---|---|
+| \`--background\` | \`0 0% 100%\` | \`#FFFFFF\` | Page background |
+| \`--foreground\` | \`215 28% 17%\` | \`#1F2937\` | Primary text, headings |
+| \`--primary\` | \`18 89% 54%\` | \`#F2641F\` | CTAs, brand accent, links |
+| \`--primary-foreground\` | \`0 0% 100%\` | \`#FFFFFF\` | Text on primary backgrounds |
+| \`--secondary\` | \`220 14% 96%\` | \`#F3F4F6\` | Light backgrounds, alternating sections |
+| \`--secondary-foreground\` | \`215 28% 17%\` | \`#1F2937\` | Text on secondary |
+| \`--muted\` | \`220 14% 96%\` | \`#F3F4F6\` | Disabled backgrounds, code blocks |
+| \`--muted-foreground\` | \`215 14% 34%\` | \`#4B5563\` | Secondary text, descriptions, placeholders |
+| \`--accent\` | \`18 89% 96%\` | \`#FFF5F0\` | Light orange tint for highlights |
+| \`--accent-foreground\` | \`18 89% 34%\` | \`#8B3A0F\` | Text on accent backgrounds |
+| \`--destructive\` | \`0 84% 60%\` | \`#EF4444\` | Error states, destructive actions |
+| \`--border\` | \`220 13% 91%\` | \`#E5E7EB\` | All borders |
+| \`--input\` | \`220 13% 91%\` | \`#E5E7EB\` | Input borders |
+| \`--ring\` | \`18 89% 54%\` | \`#F2641F\` | Focus rings |
+| \`--card\` | \`0 0% 100%\` | \`#FFFFFF\` | Card backgrounds |
+| \`--card-foreground\` | \`215 28% 17%\` | \`#1F2937\` | Card text |
+| \`--radius\` | \`0.5rem\` | — | Base border radius |
+
+### Brand Tokens (for gradients & decorative use)
+
+| Token | HSL | Hex |
+|---|---|---|
+| \`--synex-orange\` | \`18 89% 54%\` | \`#F2641F\` |
+| \`--synex-orange-light\` | \`18 89% 75%\` | \`#F8AC86\` |
+| \`--synex-grey\` | \`0 0% 28%\` | \`#474747\` |
+| \`--synex-grey-70\` | \`0 0% 70%\` | \`#B2B2B2\` |
+| \`--synex-grey-60\` | \`0 0% 60%\` | \`#999999\` |
+| \`--synex-navy-1\` | \`215 28% 17%\` | \`#1F2937\` |
+| \`--synex-navy-2\` | \`215 14% 34%\` | \`#4B5563\` |
+
+### Tailwind Usage
+
+\`\`\`tsx
+// ✅ Correct
+<h1 className="text-foreground">Title</h1>
+<p className="text-muted-foreground">Description</p>
+<button className="bg-primary text-primary-foreground">CTA</button>
+
+// ❌ Wrong
+<h1 className="text-gray-900">Title</h1>
+<p className="text-[#4B5563]">Description</p>
+<button className="bg-orange-500 text-white">CTA</button>
+\`\`\`
+
+---
+
+## 4. Typography
+
+**Font family**: \`font-sans\` → Roboto, ui-sans-serif, system-ui, sans-serif
+
+### Type Scale (Responsive)
+
+All headings scale down on mobile. Use the responsive pattern shown.
+
+| Element | Desktop | Mobile (base) | Weight | Color | Tailwind Classes |
+|---|---|---|---|---|---|
+| H1 | 40px | 30px | 700 | \`foreground\` | \`text-3xl sm:text-4xl font-bold\` |
+| H2 | 32px | 24px | 700 | \`foreground\` | \`text-2xl sm:text-3xl font-bold\` |
+| H3 | 24px | 20px | 700 | \`foreground\` | \`text-xl sm:text-2xl font-bold\` |
+| H4 | 20px | 18px | 500 | \`foreground\` | \`text-lg sm:text-xl font-medium\` |
+| H5 | 18px | 16px | 500 | \`foreground\` | \`text-base sm:text-lg font-medium\` |
+| H6 | 16px | 16px | 500 | \`foreground\` | \`text-base font-medium\` |
+| Subtitle | 18px | 16px | 400 | \`muted-foreground\` | \`text-base sm:text-lg text-muted-foreground\` |
+| Body | 16px | 16px | 400 | \`foreground\` | \`text-base\` |
+| Body Small | 14px | 14px | 400 | \`muted-foreground\` | \`text-sm text-muted-foreground\` |
+| Caption | 12px | 12px | 400 | \`muted-foreground\` | \`text-xs text-muted-foreground\` |
+| Section Label | 16px | 14px | 600 | \`primary\` | \`text-sm sm:text-base font-semibold text-primary\` |
+| Orange Highlight | — | — | 700 | \`primary\` | \`text-primary font-bold\` (use sparingly) |
+
+### Typography Rules
+
+- Use \`text-pretty\` on headlines to prevent orphans
+- Use \`leading-relaxed\` on body/subtitle text for readability
+- Use \`tracking-tight\` on H1 and H2 for visual density
+- Keep body line lengths between 50–75 characters (\`max-w-2xl\` or \`max-w-lg\`)
+- Section labels always appear above section headings: \`text-sm sm:text-base font-semibold text-primary\`
+
+---
+
+## 5. Spacing System
+
+Based on a **4px grid**. Use Tailwind spacing utilities.
+
+### Key Spacing Values
+
+| Use Case | Mobile (base) | Desktop (sm+) | Tailwind Pattern |
+|---|---|---|---|
+| Section vertical padding | 48px (py-12) | 80px (py-20) | \`py-12 sm:py-20\` |
+| Container horizontal padding | 16px (px-4) | 24px → 32px | \`px-4 sm:px-6 lg:px-8\` |
+| Card internal padding | 16px (p-4) | 24px (p-6) | \`p-4 sm:p-6\` |
+| Bento card padding | 24px (p-6) | 40px (p-10) | \`p-6 sm:p-10\` |
+| Heading to content gap | 32px | 32px | \`mb-8\` |
+| Grid gap (cards) | 24px | 24px | \`gap-6\` |
+| Grid gap (major layouts) | 24px | 32px | \`gap-6 sm:gap-8\` |
+| Navbar height | 64px | 64px | \`h-16\` |
+| Section heading margin-top | 8px | 8px | \`mt-2\` (after section label) |
+
+---
+
+## 6. Border Radius
+
+| Size | Value | Use Case |
+|---|---|---|
+| \`rounded-sm\` | 4px | Small chips, tags |
+| \`rounded-md\` | 6px | Inputs, small buttons |
+| \`rounded-lg\` | 8px (--radius) | Default cards, dropdowns |
+| \`rounded-xl\` | 12px | Cards on mobile |
+| \`rounded-2xl\` | 16px | Cards on desktop, hero visuals |
+| \`rounded-full\` | 50% | Avatars, badges, pills |
+
+### Responsive Radius Rule
+
+Cards and prominent containers: \`rounded-xl sm:rounded-2xl\`
+Form containers: \`rounded-xl sm:rounded-2xl\`
+
+---
+
+## 7. Breakpoints
+
+| Breakpoint | Width | Device | Key Layout Changes |
+|---|---|---|---|
+| \`base\` | 0–639px | Mobile portrait | Single column, sheet drawer nav, footer nav hidden, smallest padding |
+| \`sm\` (640px) | 640–767px | Mobile landscape | 2-col grids begin, headings scale up, card padding increases |
+| \`md\` (768px) | 768–1023px | Tablet portrait | Footer nav columns visible, 2-col forms, blog grid 2-col |
+| \`lg\` (1024px) | 1024–1279px | Tablet landscape | Navbar shows full links (no drawer), 3-col grids, bento 6-col, hero split layout |
+| \`xl\` (1280px) | 1280–1399px | Desktop | Full layout, content at max width |
+| \`2xl\` (1400px) | 1400px+ | Large desktop | Container caps at 1400px |
+
+### Container Pattern
+
+\`\`\`tsx
+<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+  {/* Content */}
+</div>
+\`\`\`
+
+Or use the Tailwind \`container\` class (auto-centered, 2rem padding, max 1400px).
+
+---
+
+## 8. Layout Patterns
+
+### Section Structure
+
+Every page section follows this pattern:
+
+\`\`\`tsx
+<section className="py-12 sm:py-20 bg-background">
+  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    {/* Optional section label */}
+    <p className="text-sm sm:text-base font-semibold text-primary">Label</p>
+    {/* Heading */}
+    <h2 className="mt-2 text-2xl sm:text-3xl font-bold tracking-tight text-foreground text-pretty">
+      Section Title
+    </h2>
+    {/* Optional description */}
+    <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl">
+      Description text.
+    </p>
+    {/* Content grid */}
+    <div className="mt-10 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Cards/items */}
+    </div>
+  </div>
+</section>
+\`\`\`
+
+### Grid Patterns
+
+| Pattern | Mobile | Tablet | Desktop | Tailwind |
+|---|---|---|---|---|
+| Card grid | 1 col | 2 col | 3 col | \`grid-cols-1 sm:grid-cols-2 lg:grid-cols-3\` |
+| Blog grid | 1 col | 2 col | 3 col | \`grid-cols-1 sm:grid-cols-2 lg:grid-cols-3\` |
+| Bento grid | 1 col | 1 col | 6-col | \`grid-cols-1 lg:grid-cols-6\` |
+| Two-column | 1 col | 2 col | 2 col | \`grid-cols-1 sm:grid-cols-2\` |
+| Hero split | Stacked | Stacked | Side-by-side | \`lg:flex lg:items-center\` |
+| Footer nav | Hidden | 2-col grid | 3-col grid | \`hidden md:grid grid-cols-2 lg:grid-cols-3\` |
+
+### Alternating Section Backgrounds
+
+Alternate between these for visual rhythm:
+- \`bg-background\` (white)
+- \`bg-secondary/30\` or \`bg-secondary/50\` (light grey)
+- \`bg-gradient-to-br from-muted via-muted/40 to-primary/10\` (gradient sections)
+
+---
+
+## 9. Component Library
+
+### Navbar
+- Sticky: \`sticky top-0 z-50\`
+- Backdrop: \`bg-background/80 backdrop-blur-md\`
+- Mobile: Sheet drawer with accordion menus (triggers at \`< lg\`)
+- Desktop: Full horizontal links with mega-menu dropdowns on hover
+- Auth buttons: "Log in" (ghost) + "Sign up" (primary) at right
+
+### Footer
+- Background: \`bg-secondary/30\` with \`border-t border-border\`
+- Logo + tagline in left column
+- Navigation columns: \`hidden md:grid\` — 3 columns (Services, Company, Legal)
+- Newsletter: subscribe form with \`Input\` + \`Button\`
+- Bottom: social icons + copyright
+- Social icons: \`size-5\` with \`text-muted-foreground hover:text-foreground transition-colors\`
+
+### Page Headers (4 variants)
+All share \`PageHeaderProps\`: \`{ tag: string; title: string; description?: string }\`
+
+1. **Watermark**: Faded "EU" watermark text (hidden on mobile via \`hidden sm:block\`)
+2. **CloudTrail**: Orange gradient blob behind content
+3. **HeroGrid**: SVG grid pattern + gradient blob
+4. **AccentBar**: Orange \`w-1\` left border accent
+
+### Cards
+
+\`\`\`tsx
+// Standard card
+<div className="rounded-xl sm:rounded-2xl border border-border bg-card p-4 sm:p-6 shadow-sm">
+
+// Accent card (highlighted)
+<div className="rounded-xl sm:rounded-2xl border border-primary/30 bg-accent p-4 sm:p-6">
+
+// Feature card with icon
+<div className="flex gap-4 rounded-xl border border-border bg-card p-4 sm:p-6 shadow-sm">
+  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+    <Icon className="h-5 w-5" />
+  </div>
+  <div>
+    <h3 className="font-semibold text-foreground">Title</h3>
+    <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">Description</p>
+  </div>
+</div>
+\`\`\`
+
+### Buttons (shadcn/ui)
+
+6 variants: \`default\` (primary orange), \`outline\`, \`secondary\`, \`ghost\`, \`link\`, \`destructive\`
+3 sizes: \`sm\`, \`default\`, \`lg\`
+
+\`\`\`tsx
+<Button>Primary CTA</Button>
+<Button variant="outline">Secondary</Button>
+<Button size="lg" className="gap-2">
+  Get Started <ArrowRight className="h-4 w-4" />
+</Button>
+\`\`\`
+
+### Forms
+
+\`\`\`tsx
+<div className="space-y-2">
+  <Label htmlFor="field">Label</Label>
+  <Input id="field" placeholder="Placeholder" />
+</div>
+\`\`\`
+
+- Stack fields with \`space-y-5\` or \`space-y-6\`
+- Use \`sm:grid-cols-2\` for side-by-side fields on tablet+
+- Submit buttons: \`mt-8 flex justify-end\`
+
+### Hero Grid Background (reusable)
+
+\`\`\`tsx
+import HeroGridBackground from "@/components/ui/hero-grid-background";
+
+<div className="relative isolate overflow-hidden">
+  <HeroGridBackground id="unique-id" />
+  {/* Content */}
+</div>
+\`\`\`
+
+### Gradient Blobs (decorative)
+
+\`\`\`tsx
+<div
+  aria-hidden="true"
+  className="absolute left-[calc(50%-4rem)] top-10 -z-10 transform-gpu blur-3xl"
+>
+  <div
+    className="aspect-[1108/632] w-[69.25rem] opacity-20"
+    style={{
+      background: "linear-gradient(to top right, hsl(var(--synex-orange-light)), hsl(var(--synex-orange)))",
+      clipPath: "polygon(73.6% 51.7%, 91.7% 11.8%, ...)",
+    }}
+  />
+</div>
+\`\`\`
+
+---
+
+## 10. Animation Rules
+
+- **Scroll-triggered fade-in**: The only approved animation pattern. Use the \`use-scroll-fade\` hook.
+- **Hover states**: \`transition-colors\` on links, \`hover:text-foreground\` from \`text-muted-foreground\`
+- **No parallax** — ever
+- **No bounce, stagger, or complex entrance animations**
+- **Progress bars**: \`transition-all duration-700\` for width changes
+
+---
+
+## 11. Shadow System
+
+| Level | Tailwind | Use Case |
+|---|---|---|
+| \`shadow-sm\` | — | Default cards, form containers |
+| \`shadow-lg\` | — | Hero cards, elevated content |
+| \`shadow\` | — | Dropdown panels |
+| None | — | Flat cards in bento grids (use outline instead) |
+
+Bento grid cards use \`outline outline-1 outline-black/5\` instead of shadows.
+
+---
+
+## 12. Do / Don't Rules
+
+### DO ✅
+- Use semantic tokens (\`text-foreground\`, \`bg-primary\`) not raw colors
+- Stack grids to 1-column on mobile
+- Use \`text-pretty\` on all headlines
+- Use \`leading-relaxed\` on body text
+- Add \`max-w-2xl\` or \`max-w-lg\` to paragraph text to control line length
+- Use \`overflow-hidden\` on card containers to clip child content
+- Use \`aria-hidden="true"\` on decorative SVGs and blobs
+- Use \`<Link>\` from react-router-dom for internal navigation
+- Alternate section backgrounds for visual rhythm
+- Hide decorative watermark text on mobile (\`hidden sm:block\`)
+
+### DON'T ❌
+- Don't use dark overlay stock photos for heroes — use split layouts with copy left
+- Don't add parallax, bounce, or stagger animations
+- Don't use Heroicons — use Lucide React exclusively
+- Don't use raw hex values in components
+- Don't use \`text-white\`, \`bg-black\`, \`text-gray-*\` — use semantic tokens
+- Don't use more than one \`<h1>\` per page
+- Don't use \`fixed\` positioning for the navbar — use \`sticky\`
+- Don't add dark mode variants (light-only for now)
+
+---
+
+## 13. Image Guidelines
+
+- **Placeholder icons**: Use Lucide icons at \`h-16 w-16 text-primary/40\` in gradient placeholder areas
+- **Gradient placeholders**: \`bg-gradient-to-br from-primary/10 via-accent to-secondary\`
+- **Bento card visual areas**: \`h-48 sm:h-80\` with centered icon
+- **Logo height**: \`h-7\` (28px) in navbar and footer
+- **Avatar placeholders**: \`rounded-full bg-muted\` with initials
+
+---
+
+## 14. Section Inventory
+
+These sections are available as ready-made components. Compose pages by importing and arranging them:
+
+| Component | Import Path | Description |
+|---|---|---|
+| \`HeroSection\` | \`@/components/landing/HeroSection\` | Split hero with copy + compliance dashboard |
+| \`FeaturesSection\` | \`@/components/landing/FeaturesSection\` | 2×2 benefit cards + 2 service CTAs |
+| \`BentoSection\` | \`@/components/landing/BentoSection\` | 5-card bento grid (platform features) |
+| \`OpportunitiesSection\` | \`@/components/landing/OpportunitiesSection\` | 3 CTA cards for partners |
+| \`BlogSection\` | \`@/components/landing/BlogSection\` | 3-column blog preview |
+| \`LogoCloudSection\` | \`@/components/landing/LogoCloudSection\` | Trusted-by logo strip |
+| \`DemosSection\` | \`@/components/landing/DemosSection\` | Phone mockup demo cards |
+| \`PracticalGuideSection\` | \`@/components/landing/PracticalGuideSection\` | Numbered steps guide |
+| \`BatteryHeroSection\` | \`@/components/battery-reg/HeroSection\` | Battery regulation hero |
+| \`KeyRequirements\` | \`@/components/battery-reg/KeyRequirements\` | Regulation requirements grid |
+| \`ComplianceBenefits\` | \`@/components/battery-reg/ComplianceBenefits\` | 2-column compliance benefits |
+| \`ServicesTabsSection\` | \`@/components/battery-reg/ServicesTabsSection\` | Tabbed services display |
+| \`ConsultationCTA\` | \`@/components/battery-reg/ConsultationCTA\` | Consultation call-to-action |
+| \`BatteryPassportOverview\` | \`@/components/battery-reg/BatteryPassportOverview\` | Battery passport with stakeholders |
+| \`ContactSection\` | \`@/components/contact/ContactSection\` | Inline contact form |
+| \`ContactDialog\` | \`@/components/contact/ContactDialog\` | Popup contact dialog |
+| \`ResourceBlogSection\` | \`@/components/resources/ResourceBlogSection\` | Blog with search/filter |
+| \`ResourceDownloadsSection\` | \`@/components/resources/ResourceDownloadsSection\` | Downloadable resources |
+| \`ConsultingNavSection\` | \`@/components/consulting/ConsultingNavSection\` | Service navigation |
+| \`Navbar\` | \`@/components/Navbar\` | Sticky navbar with mega-menu |
+| \`Footer\` | \`@/components/Footer\` | Full footer with newsletter |
+| \`PageHeader*\` | \`@/components/ui/page-headers\` | 4 header variants |
+| \`HeroGridBackground\` | \`@/components/ui/hero-grid-background\` | Reusable SVG grid pattern |
+
+---
+
+## 15. Page Composition Template
+
+\`\`\`tsx
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { PageHeaderHeroGrid } from "@/components/ui/page-headers";
+
+const NewPage = () => (
+  <div className="min-h-screen flex flex-col bg-background">
+    <Navbar />
+    <PageHeaderHeroGrid
+      tag="Section Tag"
+      title="Page Title"
+      description="Brief page description."
+    />
+    <main className="flex-1">
+      {/* Import and compose sections here */}
+    </main>
+    <Footer />
+  </div>
+);
+
+export default NewPage;
+\`\`\`
+
+---
+
+## 16. SEO Checklist
+
+- \`<title>\` under 60 characters with target keyword
+- \`<meta name="description">\` under 160 characters
+- Single \`<h1>\` per page
+- Semantic HTML: \`<section>\`, \`<main>\`, \`<nav>\`, \`<footer>\`
+- \`alt\` text on all \`<img>\` tags
+- Lazy loading on below-fold images
+- Responsive viewport meta tag (already in index.html)`;
+
+const AiPromptWindow = () => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(AI_PROMPT);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <div className="rounded-xl border border-border overflow-hidden">
+      <div className="flex items-center justify-between bg-foreground px-5 py-3">
+        <p className="text-sm font-medium text-primary-foreground">AI Agent Prompt — Full Design System</p>
+        <button
+          onClick={handleCopy}
+          className="rounded-full px-4 py-1 text-xs font-medium bg-muted-foreground/30 text-primary-foreground hover:bg-muted-foreground/50 transition-colors"
+        >
+          {copied ? "✓ Copied!" : "Copy Prompt"}
+        </button>
+      </div>
+      <div className="bg-[#1a1f2e] p-6 overflow-x-auto max-h-[600px] overflow-y-auto">
+        <pre className="text-sm text-gray-300 font-mono whitespace-pre-wrap">{AI_PROMPT}</pre>
+      </div>
+    </div>
+  );
+};
+
 /* ─── Page ─── */
 const DesignSystem = () => {
   return (
