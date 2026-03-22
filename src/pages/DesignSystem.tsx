@@ -38,6 +38,7 @@ import {
   logoCloudCode,
   resourceBlogCode,
   resourceDownloadsCode,
+  consultingNavCode,
 } from "@/components/design-system/section-codes";
 
 /* ─── Helpers ─── */
