@@ -1,4 +1,5 @@
 import { ShieldAlert, Timer, CircleDollarSign, Route, ArrowRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const benefits = [
   {
@@ -42,8 +43,8 @@ const services = [
   },
 ];
 
-const FeaturesSection = () => (
-  <section className="relative py-24 sm:py-32 overflow-hidden">
+const FeaturesSection = ({ className }: { className?: string }) => (
+  <section className={cn("relative py-24 sm:py-32 overflow-hidden", className)}>
     {/* Gradient background */}
     <div className="absolute inset-0 -z-10 bg-gradient-to-br from-muted via-muted/40 to-primary/10" />
     {/* Subtle dot pattern */}
