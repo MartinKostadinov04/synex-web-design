@@ -446,6 +446,10 @@ const DesignSystem = () => {
             <SectionShowcase name="Demos — Phone Mockup Cards" code={demosSectionCode}>
               <DemosSection />
             </SectionShowcase>
+            </SectionShowcase>
+            <SectionShowcase name="Practical Guide — Numbered Steps" code={practicalGuideCode}>
+              <PracticalGuideSection />
+            </SectionShowcase>
           </div>
         </Section>
       </main>
