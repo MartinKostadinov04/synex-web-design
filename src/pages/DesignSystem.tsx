@@ -424,6 +424,9 @@ const DesignSystem = () => {
             <SectionShowcase name="Resources — Downloads with Preview" code={resourceDownloadsCode}>
               <ResourceDownloadsSection />
             </SectionShowcase>
+            <SectionShowcase name="Consulting — Service Navigation" code={consultingNavCode}>
+              <ConsultingNavSection />
+            </SectionShowcase>
           </div>
         </Section>
       </main>
