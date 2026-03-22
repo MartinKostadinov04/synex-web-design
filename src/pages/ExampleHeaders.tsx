@@ -4,59 +4,10 @@ import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-/* ─── Header Variants ─── */
+/* ─── Variant C1 — Original: faded watermark text ─── */
 
-const HeaderVariantA = () => (
-  <div className="relative overflow-hidden bg-foreground py-16 sm:py-20">
-    {/* Diagonal accent */}
-    <div className="absolute inset-0 opacity-10">
-      <div className="absolute -right-20 -top-20 h-80 w-80 rounded-full bg-primary" />
-      <div className="absolute -left-10 bottom-0 h-60 w-60 rounded-full bg-primary/50" />
-    </div>
-    <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-      <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-        Battery Regulation
-      </p>
-      <h1 className="mt-3 text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl lg:text-5xl">
-        Compliance Services
-      </h1>
-      <p className="mt-4 max-w-2xl text-base text-primary-foreground/70 leading-relaxed sm:text-lg">
-        Navigate the EU Battery Regulation with expert guidance on digital
-        passports, labelling, and supply chain compliance.
-      </p>
-    </div>
-  </div>
-);
-
-const HeaderVariantB = () => (
-  <div className="relative bg-gradient-to-br from-foreground via-foreground to-synex-navy-2 py-16 sm:py-20">
-    {/* Geometric pattern */}
-    <div className="absolute inset-0 opacity-[0.04]">
-      <div className="h-full w-full" style={{
-        backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 40px, white 40px, white 41px)",
-      }} />
-    </div>
-    <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-      <div className="flex items-center gap-3">
-        <div className="h-10 w-1 rounded-full bg-primary" />
-        <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-          Battery Regulation
-        </p>
-      </div>
-      <h1 className="mt-4 text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl lg:text-5xl">
-        Compliance Services
-      </h1>
-      <p className="mt-4 max-w-2xl text-base text-primary-foreground/70 leading-relaxed sm:text-lg">
-        Navigate the EU Battery Regulation with expert guidance on digital
-        passports, labelling, and supply chain compliance.
-      </p>
-    </div>
-  </div>
-);
-
-const HeaderVariantC = () => (
+const HeaderC1 = () => (
   <div className="relative overflow-hidden border-b border-border bg-secondary/50 py-16 sm:py-20">
-    {/* Large faded number */}
     <span className="absolute -right-8 top-1/2 -translate-y-1/2 text-[12rem] font-bold leading-none text-primary/[0.04] select-none sm:text-[16rem]">
       EU
     </span>
@@ -76,46 +27,36 @@ const HeaderVariantC = () => (
   </div>
 );
 
-const HeaderVariantD = () => (
-  <div className="relative overflow-hidden bg-foreground py-16 sm:py-20">
-    {/* Orange accent strip */}
-    <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary" />
-    {/* Dots pattern */}
-    <div className="absolute right-0 top-0 h-full w-1/3 opacity-[0.03]">
-      <div className="h-full w-full" style={{
-        backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)",
-        backgroundSize: "20px 20px",
-      }} />
-    </div>
-    <div className="relative mx-auto max-w-7xl px-6 lg:px-8 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
-      <div>
-        <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-          Battery Regulation
-        </p>
-        <h1 className="mt-3 text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl lg:text-5xl">
-          Compliance Services
-        </h1>
-      </div>
-      <p className="max-w-md text-base text-primary-foreground/60 leading-relaxed sm:text-right">
-        Navigate the EU Battery Regulation with expert guidance on digital
-        passports, labelling, and supply chain compliance.
-      </p>
-    </div>
-  </div>
-);
+/* ─── Variant C2 — Gradient blob from hero (cloud trail) ─── */
 
-const HeaderVariantE = () => (
-  <div className="relative overflow-hidden bg-gradient-to-r from-foreground to-foreground/95 py-16 sm:py-20">
-    {/* Angled shape */}
-    <div className="absolute right-0 top-0 h-full w-2/5 bg-primary/10 [clip-path:polygon(30%_0,100%_0,100%_100%,0%_100%)]" />
+const HeaderC2 = () => (
+  <div className="relative isolate overflow-hidden border-b border-border bg-secondary/50 py-16 sm:py-20">
+    {/* Cloud trail blob — same as landing hero */}
+    <div
+      aria-hidden="true"
+      className="absolute left-[calc(50%-4rem)] top-10 -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:left-48 lg:top-[calc(50%-15rem)] xl:left-[calc(50%-24rem)]"
+    >
+      <div
+        className="aspect-[1108/632] w-[69.25rem] opacity-20"
+        style={{
+          background: "linear-gradient(to top right, hsl(var(--synex-orange-light)), hsl(var(--synex-orange)))",
+          clipPath:
+            "polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)",
+        }}
+      />
+    </div>
+    <span className="absolute -right-8 top-1/2 -translate-y-1/2 text-[12rem] font-bold leading-none text-primary/[0.04] select-none sm:text-[16rem]">
+      EU
+    </span>
     <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-      <p className="text-sm font-semibold uppercase tracking-widest text-primary">
+      <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold text-primary">
+        <span className="h-1.5 w-1.5 rounded-full bg-primary" />
         Battery Regulation
-      </p>
-      <h1 className="mt-3 text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl lg:text-5xl">
+      </div>
+      <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
         Compliance Services
       </h1>
-      <p className="mt-4 max-w-2xl text-base text-primary-foreground/70 leading-relaxed sm:text-lg">
+      <p className="mt-4 max-w-2xl text-base text-muted-foreground leading-relaxed sm:text-lg">
         Navigate the EU Battery Regulation with expert guidance on digital
         passports, labelling, and supply chain compliance.
       </p>
@@ -123,17 +64,119 @@ const HeaderVariantE = () => (
   </div>
 );
 
-/* ─── Variant Registry ─── */
+/* ─── Variant C3 — Subtle grid pattern behind ─── */
+
+const HeaderC3 = () => (
+  <div className="relative overflow-hidden border-b border-border bg-secondary/50 py-16 sm:py-20">
+    {/* Grid pattern */}
+    <svg
+      aria-hidden="true"
+      className="absolute inset-0 -z-10 h-full w-full stroke-border/60 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
+    >
+      <defs>
+        <pattern id="header-grid" x="50%" y={-1} width={80} height={80} patternUnits="userSpaceOnUse">
+          <path d="M.5 80V.5H80" fill="none" />
+        </pattern>
+      </defs>
+      <rect fill="url(#header-grid)" width="100%" height="100%" strokeWidth={0} />
+    </svg>
+    <span className="absolute -right-8 top-1/2 -translate-y-1/2 text-[12rem] font-bold leading-none text-primary/[0.04] select-none sm:text-[16rem]">
+      EU
+    </span>
+    <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold text-primary">
+        <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+        Battery Regulation
+      </div>
+      <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+        Compliance Services
+      </h1>
+      <p className="mt-4 max-w-2xl text-base text-muted-foreground leading-relaxed sm:text-lg">
+        Navigate the EU Battery Regulation with expert guidance on digital
+        passports, labelling, and supply chain compliance.
+      </p>
+    </div>
+  </div>
+);
+
+/* ─── Variant C4 — Orange left border accent ─── */
+
+const HeaderC4 = () => (
+  <div className="relative overflow-hidden border-b border-border bg-secondary/50 py-16 sm:py-20">
+    {/* Left accent bar */}
+    <div className="absolute left-0 top-0 h-full w-1 bg-primary" />
+    <span className="absolute -right-8 top-1/2 -translate-y-1/2 text-[12rem] font-bold leading-none text-primary/[0.04] select-none sm:text-[16rem]">
+      EU
+    </span>
+    <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold text-primary">
+        <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+        Battery Regulation
+      </div>
+      <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+        Compliance Services
+      </h1>
+      <p className="mt-4 max-w-2xl text-base text-muted-foreground leading-relaxed sm:text-lg">
+        Navigate the EU Battery Regulation with expert guidance on digital
+        passports, labelling, and supply chain compliance.
+      </p>
+    </div>
+  </div>
+);
+
+/* ─── Variant C5 — Dot pattern + cloud trail combined ─── */
+
+const HeaderC5 = () => (
+  <div className="relative isolate overflow-hidden border-b border-border bg-secondary/50 py-16 sm:py-20">
+    {/* Dot pattern */}
+    <div className="absolute inset-0 -z-10 opacity-[0.35]" style={{
+      backgroundImage: "radial-gradient(hsl(var(--border)) 1px, transparent 1px)",
+      backgroundSize: "24px 24px",
+    }} />
+    {/* Cloud trail blob */}
+    <div
+      aria-hidden="true"
+      className="absolute right-0 top-0 -z-10 transform-gpu blur-3xl"
+    >
+      <div
+        className="aspect-[1108/632] w-[50rem] opacity-15"
+        style={{
+          background: "linear-gradient(to top right, hsl(var(--synex-orange-light)), hsl(var(--synex-orange)))",
+          clipPath:
+            "polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)",
+        }}
+      />
+    </div>
+    <span className="absolute -right-8 top-1/2 -translate-y-1/2 text-[12rem] font-bold leading-none text-primary/[0.04] select-none sm:text-[16rem]">
+      EU
+    </span>
+    <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold text-primary">
+        <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+        Battery Regulation
+      </div>
+      <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+        Compliance Services
+      </h1>
+      <p className="mt-4 max-w-2xl text-base text-muted-foreground leading-relaxed sm:text-lg">
+        Navigate the EU Battery Regulation with expert guidance on digital
+        passports, labelling, and supply chain compliance.
+      </p>
+    </div>
+  </div>
+);
+
+/* ─── Registry ─── */
 
 const variants = [
-  { name: "A — Floating circles", component: HeaderVariantA },
-  { name: "B — Geometric lines + bar accent", component: HeaderVariantB },
-  { name: "C — Light with faded text", component: HeaderVariantC },
-  { name: "D — Split layout with bottom accent", component: HeaderVariantD },
-  { name: "E — Angled clip shape", component: HeaderVariantE },
+  { name: "C1 — Faded watermark (original)", component: HeaderC1 },
+  { name: "C2 — Cloud trail blob from hero", component: HeaderC2 },
+  { name: "C3 — Grid pattern background", component: HeaderC3 },
+  { name: "C4 — Orange left border accent", component: HeaderC4 },
+  { name: "C5 — Dot pattern + cloud trail", component: HeaderC5 },
 ];
 
-/* ─── Sample page content ─── */
+/* ─── Sample content ─── */
 
 const SampleContent = () => (
   <section className="py-16 sm:py-20">
@@ -188,7 +231,7 @@ const ExampleHeaders = () => {
         {/* Active header */}
         <CurrentHeader />
 
-        {/* Sample content below */}
+        {/* Sample content */}
         <SampleContent />
       </main>
 
