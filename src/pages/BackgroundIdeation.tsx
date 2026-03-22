@@ -6,8 +6,9 @@ import FeaturesSection from "@/components/landing/FeaturesSection";
 import BentoSection from "@/components/landing/BentoSection";
 import LogoCloudSection from "@/components/landing/LogoCloudSection";
 import ContactSection from "@/components/contact/ContactSection";
+import HeroGridBackground from "@/components/ui/hero-grid-background";
 
-type Strategy = "A" | "B" | "C" | "D" | "E" | "F";
+type Strategy = "A" | "B" | "C" | "D" | "E" | "F" | "G";
 
 const strategies: { key: Strategy; label: string; description: string }[] = [
   { key: "A", label: "Flat White", description: "No background treatment — pure white everywhere. Clean but can feel sterile." },
