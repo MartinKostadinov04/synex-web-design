@@ -20,6 +20,8 @@ import ComplianceBenefits from "@/components/battery-reg/ComplianceBenefits";
 import ServicesTabsSection from "@/components/battery-reg/ServicesTabsSection";
 import ConsultationCTA from "@/components/battery-reg/ConsultationCTA";
 import LogoCloudSection from "@/components/landing/LogoCloudSection";
+import ResourceBlogSection from "@/components/resources/ResourceBlogSection";
+import ResourceDownloadsSection from "@/components/resources/ResourceDownloadsSection";
 import {
   cssTokensCode,
   heroCode,
@@ -33,6 +35,8 @@ import {
   servicesTabsCode,
   consultationCtaCode,
   logoCloudCode,
+  resourceBlogCode,
+  resourceDownloadsCode,
 } from "@/components/design-system/section-codes";
 
 /* ─── Helpers ─── */
@@ -411,6 +415,12 @@ const DesignSystem = () => {
             </SectionShowcase>
             <SectionShowcase name="Logo Cloud" code={logoCloudCode}>
               <LogoCloudSection />
+            </SectionShowcase>
+            <SectionShowcase name="Resources — Blog with Search/Filter/Load More" code={resourceBlogCode}>
+              <ResourceBlogSection />
+            </SectionShowcase>
+            <SectionShowcase name="Resources — Downloads with Preview" code={resourceDownloadsCode}>
+              <ResourceDownloadsSection />
             </SectionShowcase>
           </div>
         </Section>
