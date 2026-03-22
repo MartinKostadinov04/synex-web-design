@@ -44,8 +44,16 @@ const services = [
 
 const FeaturesSection = () => (
   <section className="relative py-24 sm:py-32 overflow-hidden">
-    {/* Soft gradient background */}
-    <div className="absolute inset-0 -z-10 bg-gradient-to-br from-muted/60 via-background to-primary/5" />
+    {/* Gradient background */}
+    <div className="absolute inset-0 -z-10 bg-gradient-to-br from-muted via-muted/40 to-primary/10" />
+    {/* Subtle dot pattern */}
+    <div
+      className="absolute inset-0 -z-10 opacity-[0.4]"
+      style={{
+        backgroundImage: "radial-gradient(hsl(var(--foreground) / 0.08) 1px, transparent 1px)",
+        backgroundSize: "24px 24px",
+      }}
+    />
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
       {/* Header */}
       <div className="mx-auto max-w-2xl text-center">
