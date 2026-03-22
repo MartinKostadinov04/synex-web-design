@@ -26,6 +26,7 @@ import ConsultingNavSection from "@/components/consulting/ConsultingNavSection";
 import ContactSection from "@/components/contact/ContactSection";
 import ContactDialog from "@/components/contact/ContactDialog";
 import DemosSection from "@/components/landing/DemosSection";
+import PracticalGuideSection from "@/components/landing/PracticalGuideSection";
 import {
   cssTokensCode,
   heroCode,
@@ -45,6 +46,7 @@ import {
   contactSectionCode,
   contactDialogCode,
   demosSectionCode,
+  practicalGuideCode,
 } from "@/components/design-system/section-codes";
 
 /* ─── Helpers ─── */
@@ -443,6 +445,9 @@ const DesignSystem = () => {
             </SectionShowcase>
             <SectionShowcase name="Demos — Phone Mockup Cards" code={demosSectionCode}>
               <DemosSection />
+            </SectionShowcase>
+            <SectionShowcase name="Practical Guide — Numbered Steps" code={practicalGuideCode}>
+              <PracticalGuideSection />
             </SectionShowcase>
           </div>
         </Section>
