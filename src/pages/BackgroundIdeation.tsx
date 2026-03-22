@@ -111,9 +111,11 @@ const BackgroundIdeation = () => {
         </div>
       </div>
 
-      {/* Force first-level child backgrounds transparent so wrapper bg shows through */}
+      {/* Force child section backgrounds transparent so wrapper bg shows through */}
       <style>{`
-        .bg-ideation-wrap > * {
+        .bg-ideation-wrap > *,
+        .bg-ideation-wrap > * > .absolute.-z-10,
+        .bg-ideation-wrap > * > section {
           background-color: transparent !important;
           background-image: none !important;
         }
