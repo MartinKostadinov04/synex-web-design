@@ -28,6 +28,7 @@ import ContactDialog from "@/components/contact/ContactDialog";
 import DemosSection from "@/components/landing/DemosSection";
 import PracticalGuideSection from "@/components/landing/PracticalGuideSection";
 import BatteryPassportOverview from "@/components/battery-reg/BatteryPassportOverview";
+import HeroGridBackground from "@/components/ui/hero-grid-background";
 import {
   cssTokensCode,
   heroCode,
@@ -49,6 +50,7 @@ import {
   demosSectionCode,
   practicalGuideCode,
   batteryPassportOverviewCode,
+  heroGridBgCode,
 } from "@/components/design-system/section-codes";
 
 /* ─── Helpers ─── */
@@ -453,6 +455,16 @@ const DesignSystem = () => {
             </SectionShowcase>
             <SectionShowcase name="Battery Passport — Overview with Stakeholders" code={batteryPassportOverviewCode}>
               <BatteryPassportOverview />
+            </SectionShowcase>
+            <SectionShowcase name="Hero Grid Background (reusable)" code={heroGridBgCode}>
+              <div className="relative isolate overflow-hidden bg-background py-20">
+                <HeroGridBackground id="ds-grid-demo" />
+                <div className="relative mx-auto max-w-7xl px-6 text-center">
+                  <p className="text-sm font-semibold text-primary">Reusable background</p>
+                  <h3 className="mt-2 text-2xl font-bold text-foreground">Drop this behind any section</h3>
+                  <p className="mt-2 text-muted-foreground">SVG grid + orange gradient blob from the landing hero.</p>
+                </div>
+              </div>
             </SectionShowcase>
           </div>
         </Section>
