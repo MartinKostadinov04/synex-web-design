@@ -27,6 +27,7 @@ import ContactSection from "@/components/contact/ContactSection";
 import ContactDialog from "@/components/contact/ContactDialog";
 import DemosSection from "@/components/landing/DemosSection";
 import PracticalGuideSection from "@/components/landing/PracticalGuideSection";
+import BatteryPassportOverview from "@/components/battery-reg/BatteryPassportOverview";
 import {
   cssTokensCode,
   heroCode,
