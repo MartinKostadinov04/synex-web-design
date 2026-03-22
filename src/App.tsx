@@ -8,6 +8,7 @@ import BatteryReg from "./pages/BatteryReg.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import DesignSystem from "./pages/DesignSystem.tsx";
 import ExampleHeaders from "./pages/ExampleHeaders.tsx";
+import BackgroundIdeation from "./pages/BackgroundIdeation.tsx";
 
 const queryClient = new QueryClient();
 
