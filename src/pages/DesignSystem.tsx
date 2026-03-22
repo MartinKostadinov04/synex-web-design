@@ -25,6 +25,7 @@ import ResourceDownloadsSection from "@/components/resources/ResourceDownloadsSe
 import ConsultingNavSection from "@/components/consulting/ConsultingNavSection";
 import ContactSection from "@/components/contact/ContactSection";
 import ContactDialog from "@/components/contact/ContactDialog";
+import DemosSection from "@/components/landing/DemosSection";
 import {
   cssTokensCode,
   heroCode,
@@ -43,6 +44,7 @@ import {
   consultingNavCode,
   contactSectionCode,
   contactDialogCode,
+  demosSectionCode,
 } from "@/components/design-system/section-codes";
 
 /* ─── Helpers ─── */
@@ -438,6 +440,9 @@ const DesignSystem = () => {
               <div className="flex items-center justify-center py-16 bg-background">
                 <ContactDialog />
               </div>
+            </SectionShowcase>
+            <SectionShowcase name="Demos — Phone Mockup Cards" code={demosSectionCode}>
+              <DemosSection />
             </SectionShowcase>
           </div>
         </Section>
