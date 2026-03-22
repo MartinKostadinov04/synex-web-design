@@ -468,6 +468,14 @@ const DesignSystem = () => {
                 </div>
               </div>
             </SectionShowcase>
+            <SectionShowcase name="Page Headers (4 variants)" code={pageHeadersCode}>
+              <div className="space-y-1">
+                <PageHeaderWatermark tag="Battery Regulation" title="Compliance Services" description="Navigate the EU Battery Regulation with expert guidance." />
+                <PageHeaderCloudTrail tag="ESPR" title="Digital Product Passports" description="Prepare your products for the upcoming DPP requirements." />
+                <PageHeaderHeroGrid tag="Resources" title="Guides & Articles" description="Expert insights on EU regulatory compliance." />
+                <PageHeaderAccentBar tag="About" title="Our Team" description="Meet the compliance experts behind SynexCloud." />
+              </div>
+            </SectionShowcase>
           </div>
         </Section>
       </main>
