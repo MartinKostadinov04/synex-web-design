@@ -545,6 +545,9 @@ const DesignSystem = () => {
                 <PageHeaderAccentBar tag="About" title="Our Team" description="Meet the compliance experts behind SynexCloud." />
               </div>
             </SectionShowcase>
+            <SectionShowcase name="Footer" code={footerCode}>
+              <Footer />
+            </SectionShowcase>
           </div>
         </Section>
       </main>
