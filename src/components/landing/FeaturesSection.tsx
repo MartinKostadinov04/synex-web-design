@@ -14,7 +14,7 @@ const benefits = [
       "Streamline EU market entry or continuity by navigating with expert support — reducing delays and enabling confident, compliant operations.",
   },
   {
-    icon: EuroSign,
+    icon: CircleDollarSign,
     title: "Avoid Hidden Costs",
     description:
       "Prevent costly reworks and missed opportunities by addressing compliance early, turning complex requirements into operational clarity and efficiency.",
