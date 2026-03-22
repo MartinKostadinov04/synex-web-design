@@ -111,13 +111,28 @@ const BackgroundIdeation = () => {
         </div>
       </div>
 
-      {/* Force child section backgrounds transparent so wrapper bg shows through */}
+      {/* Force child section backgrounds transparent so wrapper bg shows through.
+           Target all descendants that might have bg classes, not just direct children. */}
       <style>{`
-        .bg-ideation-wrap > *,
-        .bg-ideation-wrap > * > .absolute.-z-10,
-        .bg-ideation-wrap > * > section {
+        .bg-ideation-wrap * {
           background-color: transparent !important;
-          background-image: none !important;
+        }
+        /* Restore backgrounds on cards, buttons, icons, badges, inputs, progress bars */
+        .bg-ideation-wrap .bg-card,
+        .bg-ideation-wrap .bg-primary,
+        .bg-ideation-wrap .bg-primary\\/10,
+        .bg-ideation-wrap .bg-secondary,
+        .bg-ideation-wrap [class*="bg-gradient"],
+        .bg-ideation-wrap .rounded-xl.border,
+        .bg-ideation-wrap .rounded-2xl.border,
+        .bg-ideation-wrap .rounded-lg.border,
+        .bg-ideation-wrap button,
+        .bg-ideation-wrap input,
+        .bg-ideation-wrap textarea,
+        .bg-ideation-wrap .bg-primary\\/10,
+        .bg-ideation-wrap .h-1\\.5,
+        .bg-ideation-wrap [class*="rounded-full"][class*="bg-"] {
+          background-color: revert !important;
         }
       `}</style>
 
