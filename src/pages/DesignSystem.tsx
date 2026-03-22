@@ -48,6 +48,7 @@ import {
   contactDialogCode,
   demosSectionCode,
   practicalGuideCode,
+  batteryPassportOverviewCode,
 } from "@/components/design-system/section-codes";
 
 /* ─── Helpers ─── */
