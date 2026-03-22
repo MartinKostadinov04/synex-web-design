@@ -14,6 +14,11 @@ import FeaturesSection from "@/components/landing/FeaturesSection";
 import BentoSection from "@/components/landing/BentoSection";
 import OpportunitiesSection from "@/components/landing/OpportunitiesSection";
 import BlogSection from "@/components/landing/BlogSection";
+import BatteryHeroSection from "@/components/battery-reg/HeroSection";
+import KeyRequirements from "@/components/battery-reg/KeyRequirements";
+import ComplianceBenefits from "@/components/battery-reg/ComplianceBenefits";
+import ServicesTabsSection from "@/components/battery-reg/ServicesTabsSection";
+import ConsultationCTA from "@/components/battery-reg/ConsultationCTA";
 import {
   cssTokensCode,
   heroCode,
@@ -21,6 +26,11 @@ import {
   bentoCode,
   opportunitiesCode,
   blogCode,
+  batteryHeroCode,
+  keyRequirementsCode,
+  complianceBenefitsCode,
+  servicesTabsCode,
+  consultationCtaCode,
 } from "@/components/design-system/section-codes";
 
 /* ─── Helpers ─── */
@@ -376,6 +386,26 @@ const DesignSystem = () => {
 
             <SectionShowcase name="Three-column blog" code={blogCode}>
               <BlogSection />
+            </SectionShowcase>
+
+            <SectionShowcase name="Battery Reg — Hero" code={batteryHeroCode}>
+              <BatteryHeroSection />
+            </SectionShowcase>
+
+            <SectionShowcase name="Battery Reg — Key Requirements" code={keyRequirementsCode}>
+              <KeyRequirements />
+            </SectionShowcase>
+
+            <SectionShowcase name="Battery Reg — Compliance Benefits" code={complianceBenefitsCode}>
+              <ComplianceBenefits />
+            </SectionShowcase>
+
+            <SectionShowcase name="Battery Reg — Services Tabs" code={servicesTabsCode}>
+              <ServicesTabsSection />
+            </SectionShowcase>
+
+            <SectionShowcase name="Battery Reg — Consultation CTA" code={consultationCtaCode}>
+              <ConsultationCTA />
             </SectionShowcase>
           </div>
         </Section>
