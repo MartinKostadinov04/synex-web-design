@@ -47,7 +47,8 @@ const BackgroundIdeation = () => {
       case "F":
         return index === 0 ? "bg-background" : index % 2 === 0 ? "bg-background" : "bg-muted";
       case "G":
-        return index % 2 === 0 ? "!bg-transparent" : "bg-muted";
+        // Grid sections transparent, alternating sections get a soft warm cloud
+        return index % 2 === 0 ? "!bg-transparent" : "!bg-transparent";
     }
   };
 
