@@ -14,6 +14,14 @@ import FeaturesSection from "@/components/landing/FeaturesSection";
 import BentoSection from "@/components/landing/BentoSection";
 import OpportunitiesSection from "@/components/landing/OpportunitiesSection";
 import BlogSection from "@/components/landing/BlogSection";
+import {
+  cssTokensCode,
+  heroCode,
+  featuresCode,
+  bentoCode,
+  opportunitiesCode,
+  blogCode,
+} from "@/components/design-system/section-codes";
 
 /* ─── Helpers ─── */
 const ColorSwatch = ({ name, hex, hsl, usage }: { name: string; hex: string; hsl: string; usage: string }) => (
