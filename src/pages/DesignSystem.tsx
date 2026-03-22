@@ -28,6 +28,7 @@ import ContactDialog from "@/components/contact/ContactDialog";
 import DemosSection from "@/components/landing/DemosSection";
 import PracticalGuideSection from "@/components/landing/PracticalGuideSection";
 import BatteryPassportOverview from "@/components/battery-reg/BatteryPassportOverview";
+import HeroGridBackground from "@/components/ui/hero-grid-background";
 import {
   cssTokensCode,
   heroCode,
