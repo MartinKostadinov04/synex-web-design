@@ -243,7 +243,8 @@ const DesignSystem = () => {
                 </div>
                 <div className="p-4 rounded-lg border border-border">
                   <p className="font-medium text-foreground">Grid Gap</p>
-                  <p className="text-muted-foreground mt-1"><code className="bg-muted px-1.5 py-0.5 rounded text-xs font-mono">gap-6</code> (24px) for card grids, <code className="bg-muted px-1.5 py-0.5 rounded text-xs font-mono">gap-8</code> (32px) for major layouts</p>
+                  <p className="text-muted-foreground mt-1">Mobile: <code className="bg-muted px-1.5 py-0.5 rounded text-xs font-mono">gap-6</code> (24px) → Desktop: <code className="bg-muted px-1.5 py-0.5 rounded text-xs font-mono">gap-8</code> (32px)</p>
+                  <p className="text-muted-foreground mt-0.5 font-mono text-xs">gap-6 sm:gap-8</p>
                 </div>
                 <div className="p-4 rounded-lg border border-border">
                   <p className="font-medium text-foreground">Navbar Height</p>
