@@ -1177,6 +1177,29 @@ const DesignSystem = () => {
                 <PageHeaderAccentBar tag="About" title="Our Team" description="Meet the compliance experts behind SynexCloud." />
               </div>
             </SectionShowcase>
+            <SectionShowcase name="FAQ — Accordion" code={faqSectionCode}>
+              <FAQSection
+                faqs={[
+                  { question: "What is the EU Battery Regulation?", answer: "Regulation (EU) 2023/1542 sets out comprehensive sustainability and safety requirements for all batteries placed on the EU market, including battery passports, carbon footprint declarations, and recycled content targets." },
+                  { question: "When does it take effect?", answer: "Key deadlines begin in 2025 with carbon footprint declarations and extend through 2027 for battery passports and 2031 for recycled content targets." },
+                  { question: "Do I need a Battery Passport?", answer: "Yes — all industrial and EV batteries placed on the EU market will require a digital battery passport containing composition, origin, carbon footprint, and recycled content data." },
+                ]}
+              />
+            </SectionShowcase>
+            <SectionShowcase name="404 — Not Found" code={notFoundCode}>
+              <div className="relative h-[400px] overflow-hidden rounded-xl border border-border">
+                <div className="min-h-full flex items-center justify-center bg-background relative overflow-hidden">
+                  <div className="absolute inset-0 pointer-events-none select-none">
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[12rem] font-bold text-muted/60 leading-none tracking-tighter">404</div>
+                  </div>
+                  <div className="relative z-10 text-center max-w-lg mx-auto px-6">
+                    <div className="mx-auto mb-6 h-3 w-3 rounded-full bg-primary shadow-[0_0_24px_8px_hsl(var(--primary)/0.35)]" />
+                    <h2 className="text-3xl font-bold text-foreground mb-3">Page not found</h2>
+                    <p className="text-muted-foreground">The page doesn't exist or has been moved.</p>
+                  </div>
+                </div>
+              </div>
+            </SectionShowcase>
             <SectionShowcase name="Footer" code={footerCode}>
               <Footer />
             </SectionShowcase>
