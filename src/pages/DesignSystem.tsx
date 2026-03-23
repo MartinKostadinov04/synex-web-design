@@ -31,6 +31,7 @@ import PracticalGuideSection from "@/components/landing/PracticalGuideSection";
 import BatteryPassportOverview from "@/components/battery-reg/BatteryPassportOverview";
 import HeroGridBackground from "@/components/ui/hero-grid-background";
 import { PageHeaderWatermark, PageHeaderCloudTrail, PageHeaderHeroGrid, PageHeaderAccentBar } from "@/components/ui/page-headers";
+import FAQSection from "@/components/FAQSection";
 import {
   cssTokensCode,
   heroCode,
@@ -55,6 +56,8 @@ import {
   heroGridBgCode,
   pageHeadersCode,
   footerCode,
+  faqSectionCode,
+  notFoundCode,
 } from "@/components/design-system/section-codes";
 
 /* ─── Helpers ─── */
@@ -1020,7 +1023,7 @@ const DesignSystem = () => {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border">
-                  <tr><td className="py-3 pr-6 font-mono text-xs">base</td><td className="py-3 pr-6 font-mono text-xs">0–639px</td><td className="py-3 pr-6">Mobile portrait</td><td className="py-3 text-xs text-muted-foreground">Single column, sheet drawer nav, footer nav hidden, reduced padding</td></tr>
+                  <tr><td className="py-3 pr-6 font-mono text-xs">base</td><td className="py-3 pr-6 font-mono text-xs">0–639px</td><td className="py-3 pr-6">Mobile portrait</td><td className="py-3 text-xs text-muted-foreground">Single column, sheet drawer nav, footer nav 2-col, reduced padding</td></tr>
                   <tr><td className="py-3 pr-6 font-mono text-xs">sm (640px)</td><td className="py-3 pr-6 font-mono text-xs">640–767px</td><td className="py-3 pr-6">Mobile landscape</td><td className="py-3 text-xs text-muted-foreground">2-col grids begin, heading sizes scale up, card padding increases</td></tr>
                   <tr><td className="py-3 pr-6 font-mono text-xs">md (768px)</td><td className="py-3 pr-6 font-mono text-xs">768–1023px</td><td className="py-3 pr-6">Tablet portrait</td><td className="py-3 text-xs text-muted-foreground">Footer nav columns visible, 2-col card grids, form side-by-side fields</td></tr>
                   <tr><td className="py-3 pr-6 font-mono text-xs">lg (1024px)</td><td className="py-3 pr-6 font-mono text-xs">1024–1279px</td><td className="py-3 pr-6">Tablet landscape</td><td className="py-3 text-xs text-muted-foreground">Navbar full links (no sheet), 3-col grids, bento 6-col grid, hero split layout</td></tr>
@@ -1069,7 +1072,7 @@ const DesignSystem = () => {
                     <tr><td className="py-3 pr-6">Card radius</td><td className="py-3 pr-6 font-mono text-xs">rounded-xl</td><td className="py-3 pr-6 font-mono text-xs">rounded-2xl</td><td className="py-3 font-mono text-xs">rounded-xl sm:rounded-2xl</td></tr>
                     <tr><td className="py-3 pr-6">Grid gap</td><td className="py-3 pr-6 font-mono text-xs">gap-6 (24px)</td><td className="py-3 pr-6 font-mono text-xs">gap-8 (32px)</td><td className="py-3 font-mono text-xs">gap-6 sm:gap-8</td></tr>
                     <tr><td className="py-3 pr-6">Navbar</td><td className="py-3 pr-6 font-mono text-xs">Sheet drawer</td><td className="py-3 pr-6 font-mono text-xs">Full links</td><td className="py-3 font-mono text-xs">hidden lg:flex / lg:hidden</td></tr>
-                    <tr><td className="py-3 pr-6">Footer nav</td><td className="py-3 pr-6 font-mono text-xs">Hidden</td><td className="py-3 pr-6 font-mono text-xs">3-col grid</td><td className="py-3 font-mono text-xs">hidden md:grid</td></tr>
+                    <tr><td className="py-3 pr-6">Footer nav</td><td className="py-3 pr-6 font-mono text-xs">2-col grid</td><td className="py-3 pr-6 font-mono text-xs">3-col grid</td><td className="py-3 font-mono text-xs">grid grid-cols-2 lg:grid-cols-3</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -1172,6 +1175,29 @@ const DesignSystem = () => {
                 <PageHeaderCloudTrail tag="ESPR" title="Digital Product Passports" description="Prepare your products for the upcoming DPP requirements." />
                 <PageHeaderHeroGrid tag="Resources" title="Guides & Articles" description="Expert insights on EU regulatory compliance." />
                 <PageHeaderAccentBar tag="About" title="Our Team" description="Meet the compliance experts behind SynexCloud." />
+              </div>
+            </SectionShowcase>
+            <SectionShowcase name="FAQ — Accordion" code={faqSectionCode}>
+              <FAQSection
+                faqs={[
+                  { question: "What is the EU Battery Regulation?", answer: "Regulation (EU) 2023/1542 sets out comprehensive sustainability and safety requirements for all batteries placed on the EU market, including battery passports, carbon footprint declarations, and recycled content targets." },
+                  { question: "When does it take effect?", answer: "Key deadlines begin in 2025 with carbon footprint declarations and extend through 2027 for battery passports and 2031 for recycled content targets." },
+                  { question: "Do I need a Battery Passport?", answer: "Yes — all industrial and EV batteries placed on the EU market will require a digital battery passport containing composition, origin, carbon footprint, and recycled content data." },
+                ]}
+              />
+            </SectionShowcase>
+            <SectionShowcase name="404 — Not Found" code={notFoundCode}>
+              <div className="relative h-[400px] overflow-hidden rounded-xl border border-border">
+                <div className="min-h-full flex items-center justify-center bg-background relative overflow-hidden">
+                  <div className="absolute inset-0 pointer-events-none select-none">
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[12rem] font-bold text-muted/60 leading-none tracking-tighter">404</div>
+                  </div>
+                  <div className="relative z-10 text-center max-w-lg mx-auto px-6">
+                    <div className="mx-auto mb-6 h-3 w-3 rounded-full bg-primary shadow-[0_0_24px_8px_hsl(var(--primary)/0.35)]" />
+                    <h2 className="text-3xl font-bold text-foreground mb-3">Page not found</h2>
+                    <p className="text-muted-foreground">The page doesn't exist or has been moved.</p>
+                  </div>
+                </div>
               </div>
             </SectionShowcase>
             <SectionShowcase name="Footer" code={footerCode}>
