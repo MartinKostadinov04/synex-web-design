@@ -20,7 +20,7 @@ const ResourceDownloadsSection = () => (
           <div key={item.id} className="group flex flex-col overflow-hidden rounded-xl bg-card border border-border shadow-sm hover:shadow-lg transition-shadow">
             <div className="relative mx-6 mt-6 overflow-hidden rounded-lg bg-muted/60">
               <div className="flex aspect-[3/4] max-h-72 items-end">
-                <div className="relative ml-4 mb-4 flex w-3/5 flex-col justify-between rounded-md bg-foreground p-5 shadow-xl" style={{ aspectRatio: "3/4" }}>
+                <div className="relative ml-4 mb-4 flex w-3/5 aspect-[3/4] flex-col justify-between rounded-md bg-foreground p-5 shadow-xl">
                   <p className="text-sm font-medium text-primary-foreground/80 tracking-wide">synex</p>
                   <div><div className="mb-2 h-px w-10 bg-primary" /><h3 className="text-lg font-bold leading-tight text-primary-foreground">{item.coverTitle}</h3></div>
                 </div>

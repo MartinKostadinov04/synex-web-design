@@ -16,6 +16,8 @@ const roundingMap = {
   br: { outer: "max-lg:rounded-b-[2rem] lg:rounded-br-[2rem]", inner: "max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-br-[calc(2rem+1px)]", gradient: "from-primary/10 via-accent to-secondary" },
 };
 
+const colSpanMap = { 2: "lg:col-span-2", 3: "lg:col-span-3" };
+
 const BentoSection = ({ className = "" }) => (
   <section className={`bg-background py-24 sm:py-32 ${className}`}>
     <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
@@ -28,7 +30,7 @@ const BentoSection = ({ className = "" }) => (
         {cards.map((card) => {
           const r = roundingMap[card.pos];
           return (
-            <div key={card.label} className={`relative lg:col-span-${card.span}`}>
+            <div key={card.label} className={`relative ${colSpanMap[card.span]}`}>
               <div className={`absolute inset-0 rounded-lg bg-card ${r.outer}`} />
               <div className={`relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] ${r.inner}`}>
                 <div className={`h-48 sm:h-80 bg-gradient-to-br ${r.gradient} flex items-center justify-center`}>
