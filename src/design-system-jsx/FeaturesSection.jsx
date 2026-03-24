@@ -1,4 +1,5 @@
 import { ShieldAlert, Timer, CircleDollarSign, Route, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const benefits = [
   {
@@ -77,9 +78,9 @@ const FeaturesSection = ({ className = "" }) => (
               <h3 className="text-xl font-bold text-foreground">{service.title}</h3>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{service.description}</p>
             </div>
-            <a href={service.href} className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline self-end">
+            <Link to={service.href} className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline self-end">
               Learn More <ArrowRight className="h-4 w-4" />
-            </a>
+            </Link>
           </div>
         ))}
       </div>

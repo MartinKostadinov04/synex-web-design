@@ -11,6 +11,7 @@ import ExampleHeaders from "./pages/ExampleHeaders.tsx";
 import BackgroundIdeation from "./pages/BackgroundIdeation.tsx";
 import AnimationsDemo from "./pages/AnimationsDemo.tsx";
 import ComponentPreview from "./pages/ComponentPreview.tsx";
+import ComponentReview from "./pages/ComponentReview.tsx";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/backgrounds" element={<BackgroundIdeation />} />
           <Route path="/animations" element={<AnimationsDemo />} />
           <Route path="/preview" element={<ComponentPreview />} />
+          <Route path="/component-review" element={<ComponentReview />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

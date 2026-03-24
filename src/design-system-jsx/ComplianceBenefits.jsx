@@ -1,4 +1,5 @@
 import { CheckCircle, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const benefits = [
   "End-to-end compliance roadmap tailored to your battery type and market",
@@ -14,9 +15,9 @@ const ComplianceBenefits = () => (
         <div className="space-y-5">
           <h2 className="text-3xl font-bold text-foreground leading-tight">Forget about compliance complexity</h2>
           <p className="text-muted-foreground leading-relaxed">Battery regulation compliance doesn't have to be overwhelming. Our structured approach breaks down every requirement into clear, manageable steps — so you can focus on your product, not paperwork.</p>
-          <a href="/contact" className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline">
+          <Link to="/contact" className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline">
             Talk to an expert <ArrowRight className="h-4 w-4" />
-          </a>
+          </Link>
         </div>
         <div className="space-y-4">
           {benefits.map((benefit, i) => (
