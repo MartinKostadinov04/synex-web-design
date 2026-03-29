@@ -31,6 +31,7 @@ const App = () => (
           <Route path="/animations" element={<AnimationsDemo />} />
           <Route path="/preview" element={<ComponentPreview />} />
           <Route path="/component-review" element={<ComponentReview />} />
+          <Route path="/feature-screenshot" element={<FeatureScreenshotDemo />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
